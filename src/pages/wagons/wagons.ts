@@ -4,10 +4,10 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
 
 
 @Component({
-	selector: 'page-about',
-	templateUrl: 'about.html'
+	selector: 'page-wagons',
+	templateUrl: 'wagons.html'
 })
-export class AboutPage {
+export class WagonsPage {
 
   constructor(public navCtrl: NavController, private plt: Platform, private localNotifications: LocalNotifications, alertCtrl: AlertController) {
 		this.plt.ready().then((readySource) => {
