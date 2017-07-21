@@ -1,17 +1,46 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Train</ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<ion-title>Train</ion-title>
+	</ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+
+	<ion-grid>
+		<ion-row>
+	    	<ion-col col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5>
+				<ion-list no-border *ngIf="train">
+
+				    <ion-list-header no-margin>
+				    	Locomotive
+				    </ion-list-header>
+
+				    <ion-item>
+				      <ion-icon name='train' item-start></ion-icon>
+				      	Modele
+				      <ion-note item-end color="primary">
+				      	{{train.name}}
+				      </ion-note>
+				    </ion-item>
+
+				    <ion-item>
+				      <ion-icon name='speedometer' item-start></ion-icon>
+				      	Power
+				      <ion-note item-end color="primary">
+				      	{{train.power}}
+				      </ion-note>
+				    </ion-item>
+
+				    <ion-item>
+				      <ion-icon name='albums' item-start></ion-icon>
+				      	Wagons Capacity
+				      <ion-note item-end color="primary">
+				      	{{train.wagonsMax}}
+				      </ion-note>
+				    </ion-item>
+				</ion-list>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
 </ion-content>

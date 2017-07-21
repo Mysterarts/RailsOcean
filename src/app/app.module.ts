@@ -3,6 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { HttpModule }    from '@angular/http';
+// Imports for loading & configuring the in-memory web api
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
+
+import { TrainService }          from './classes/train.service';
 
 import { TrainPage } from '../pages/train/train';
 import { WagonsPage } from '../pages/wagons/wagons';
@@ -24,6 +30,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -39,6 +47,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     LocalNotifications,
+    TrainService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
