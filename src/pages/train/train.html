@@ -1,6 +1,11 @@
 <ion-header>
 	<ion-navbar>
-		<ion-title>Train</ion-title>
+		<ion-title>Train <span *ngIf="train">- {{train.name}}</span></ion-title>
+		<ion-buttons end>
+	      	<button ion-button icon-only>
+	        	<ion-icon name="create"></ion-icon>
+	      	</button>
+	    </ion-buttons>
 	</ion-navbar>
 </ion-header>
 
@@ -27,7 +32,7 @@
 				      <ion-icon name='speedometer' item-start></ion-icon>
 				      	Power
 				      <ion-note item-end color="primary">
-				      	{{train.power}}
+				      	{{train.name}}
 				      </ion-note>
 				    </ion-item>
 
@@ -35,7 +40,7 @@
 				      <ion-icon name='albums' item-start></ion-icon>
 				      	Wagons Capacity
 				      <ion-note item-end color="primary">
-				      	{{train.wagonsMax}}
+				      	{{train.name}}
 				      </ion-note>
 				    </ion-item>
 				</ion-list>

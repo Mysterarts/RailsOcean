@@ -1,7 +1,7 @@
-export class Train {
+export class Wagon {
   id: number;
   name: string;
-  idWagons: number[];
   power: number;
   wagonsMax: number;
+  capacity: number;
 }

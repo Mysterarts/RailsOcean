@@ -17,7 +17,7 @@ export class TrainPage implements OnInit {
 	}
 
 	ngOnInit(): void {
-      	this.trainService.getTrain(0).then((train) => {
+      	this.trainService.getById(0).then((train) => {
       		this.train = train;
       		console.log(this.train);
       	})

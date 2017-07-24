@@ -18,6 +18,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { GameService } from '../providers/game-service/game-service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SplashScreen,
     LocalNotifications,
     TrainService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    GameService
   ]
 })
 export class AppModule {}

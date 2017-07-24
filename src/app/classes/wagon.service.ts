@@ -3,27 +3,27 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Train } from './train';
+import { Wagon } from './wagon';
 
 @Injectable()
-export class TrainService {
+export class WagonService {
 
-	private apiUrl = 'api/trains';  // URL to web api
+	private apiUrl = 'api/wagons';  // URL to web api
 
 	constructor(private http: Http) { }
 
-	getAll(): Promise<Train[]> {
+	getAll(): Promise<Wagon[]> {
 	  return this.http.get(this.apiUrl)
 	             .toPromise()
-	             .then(response => response.json().data as Train[])
+	             .then(response => response.json().data as Wagon[])
 	             .catch(this.handleError);
 	}
 
-	getById(id: number): Promise<Train> {
+	getById(id: number): Promise<Wagon> {
 		const url = `${this.apiUrl}/${id}`;
 		return this.http.get(url)
 	    		   .toPromise()
-	    		   .then(response => response.json().data as Train)
+	    		   .then(response => response.json().data as Wagon)
 	    		   .catch(this.handleError);
 	}
     
