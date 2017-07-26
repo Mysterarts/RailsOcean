@@ -1,6 +1,6 @@
 import 'rxjs/add/operator/toPromise';
 
-import { PlayerService } from './player.service';
+import { GameServices } from './game.services';
 import { Train } from './train';
 
 export class Player {
@@ -9,25 +9,26 @@ export class Player {
   	idTrains: number[];
   	trains: Train[];
 
-	constructor(private playerService: PlayerService) {
+	constructor(private services: GameServices) {
 		
 	}
 
 	populate(id: number): Promise<void> {
 
-		return this.playerService.getById(id).then((player) => {
-      		Object.keys(player).forEach((key) => {
-	        	this[key] = player[key];
-	    	});
+		return this.services.playerService.getById(id)
+				   .then((player) => {
+			      		Object.keys(player).forEach((key) => {
+				        	this[key] = player[key];
+				    	});
 
-      		/*
+      	
+    		this.trains = new Array;
     		this.idTrains.forEach((id) => {
-    			let train: Train;
+    			let train = new Train(this.services);
 	    		train.populate(id);
 	    		this.trains.push(train);
 	    	});
-			*/
-			//return true;
+			
       	});
 
 	}
