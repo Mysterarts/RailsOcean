@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, Platform } from 'ionic-angular';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 
+import { GameService }  from '../../app/classes/game.service';
+
 
 @Component({
 	selector: 'page-wagons',
@@ -9,7 +11,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
 })
 export class WagonsPage {
 
-  constructor(public navCtrl: NavController, private plt: Platform, private localNotifications: LocalNotifications, alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, private plt: Platform, private localNotifications: LocalNotifications, private gameService: GameService, alertCtrl: AlertController) {
 		this.plt.ready().then((readySource) => {
 			this.localNotifications.on('click', (notification, state) => {
 				let json = JSON.parse(notification.data);

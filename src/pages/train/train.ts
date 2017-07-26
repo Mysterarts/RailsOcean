@@ -3,16 +3,18 @@ import { NavController } from 'ionic-angular';
 
 import { Train }        from '../../app/classes/train';
 import { TrainService } from '../../app/classes/train.service';
+import { GameService }  from '../../app/classes/game.service';
 
 @Component({
   selector: 'page-train',
   templateUrl: 'train.html'
 })
+
 export class TrainPage implements OnInit {
 
 	train: Train;
 
-	constructor(public navCtrl: NavController, private trainService: TrainService) {
+	constructor(public navCtrl: NavController, private gameService: GameService, private trainService: TrainService) {
 
 	}
 
@@ -21,6 +23,8 @@ export class TrainPage implements OnInit {
       		this.train = train;
       		console.log(this.train);
       	})
+
+        //console.log(this.gameService.player);
 	}
 
 }
