@@ -4,6 +4,7 @@ import 'rxjs/add/operator/toPromise';
 
 import { PlayerService } from './player.service';
 import { TrainService } from './train.service';
+import { WagonService } from './wagon.service';
 import { GameServices } from './game.services';
 import { Player } from './player';
 
@@ -14,17 +15,14 @@ export class GameService {
   	services: GameServices;
   	dataReadyEvent: EventEmitter<Player>;
 
-	constructor(private playerService: PlayerService, private trainService: TrainService) {
+	constructor(private playerService: PlayerService, private trainService: TrainService, private wagonService: WagonService) {
 		this.dataReadyEvent = new EventEmitter();
 
-		this.services = {playerService, trainService};
+		this.services = {playerService, trainService, wagonService};
 
 		this.player = new Player(this.services);
 		this.player.populate(this.playerId).then((promise) => {
-			console.log("-------");
 			console.log(this.player);
-			console.log("_______");
-
 			this.dataReadyEvent.emit(this.player);
 		});
 

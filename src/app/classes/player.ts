@@ -15,11 +15,10 @@ export class Player {
 
 	populate(id: number): Promise<void> {
 
-		return this.services.playerService.getById(id)
-				   .then((player) => {
-			      		Object.keys(player).forEach((key) => {
-				        	this[key] = player[key];
-				    	});
+		return this.services.playerService.getById(id).then((player) => {
+      		Object.keys(player).forEach((key) => {
+	        	this[key] = player[key];
+	    	});
 
       	
     		this.trains = new Array;

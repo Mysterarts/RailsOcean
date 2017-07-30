@@ -1,6 +1,5 @@
 import 'rxjs/add/operator/toPromise';
 
-import { TrainService } from './train.service';
 import { GameServices } from './game.services';
 import { Wagon } from './wagon';
 
@@ -8,9 +7,13 @@ export class Train {
 	id: number;
 	name: string;
 	idWagons: number[];
-	power: number;
-	wagonsMax: number;
-  	wagons: Wagon[];
+	wagons: Wagon[];
+	idLoco: number;
+
+	// Properties from wagons
+	power: number = 0;
+	wagonsMax: number = 0;
+	capacity: number = 0;
 
 	constructor(private services: GameServices) {
 		
@@ -23,15 +26,25 @@ export class Train {
 	        	this[key] = train[key];
 	    	});
 
-	    	/*
-
+			this.wagons = new Array;
     		this.idWagons.forEach((id) => {
-				let wagon: Wagon;
-	    		wagon.populate(id);
-	    		this.wagons.push(wagon);
-	    	});
+    			let wagon = new Wagon(this.services);
+	    		wagon.populate(id).then((promise) => {
 
-			*/
+	    			this.wagons.push(wagon);
+
+	    			if(wagon.type == "loco"){
+		    			this.idLoco = this.wagons.length - 1;
+		    			console.log("LocoOk");
+		    		}
+
+		    		//Compute train properties based on wagons
+
+		    		this.power += wagon.power;
+		    		this.wagonsMax += wagon.wagonsMax;
+		    		this.capacity += wagon.capacity;
+	    		});   		
+	    	});
       	});
 	}
 
