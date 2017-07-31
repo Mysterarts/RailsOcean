@@ -24,7 +24,9 @@ export class Player {
     		this.trains = new Array;
     		this.idTrains.forEach((id) => {
     			let train = new Train(this.services);
-	    		train.populate(id);
+	    		train.populate(id).then((p) => {
+	    			console.log(train.wagons[2].name);
+	    		});
 	    		this.trains.push(train);
 	    	});
 			

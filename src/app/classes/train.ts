@@ -19,33 +19,48 @@ export class Train {
 		
 	}
 
-	populate(id: number): Promise<void>  {
+	populate(id: number): Promise<any[]>  {
 
-		return this.services.trainService.getById(id).then((train) => {
-      		Object.keys(train).forEach((key) => {
-	        	this[key] = train[key];
+		return this.services.trainService.getById(id)
+			.then((train) => {
+
+    			Object.keys(train).forEach((key) => {
+		        	this[key] = train[key];
+		    	});
+
+				this.wagons = new Array;
+				let promises = new Array;
+
+	    		this.idWagons.forEach((id) => {
+	    			let wagon = new Wagon(this.services);
+
+	    			let promise = new Promise((resolve, reject) => {
+			    			wagon.populate(id)
+			    			.then((res) => {
+
+				    			this.wagons.push(wagon);
+
+				    			if(wagon.type == "loco"){
+					    			this.idLoco = this.wagons.length - 1;
+					    			console.log("LocoOk");
+					    		}
+
+					    		//Compute train properties based on wagons
+
+					    		this.power += wagon.power;
+					    		this.wagonsMax += wagon.wagonsMax;
+					    		this.capacity += wagon.capacity;
+			    			})
+			    			.then((res) => {
+			    				resolve(wagon);
+			    			})
+		    		});
+
+		    		promises.push(promise);
+	    		})
+	    		
+	    		return Promise.all(promises);		
 	    	});
-
-			this.wagons = new Array;
-    		this.idWagons.forEach((id) => {
-    			let wagon = new Wagon(this.services);
-	    		wagon.populate(id).then((promise) => {
-
-	    			this.wagons.push(wagon);
-
-	    			if(wagon.type == "loco"){
-		    			this.idLoco = this.wagons.length - 1;
-		    			console.log("LocoOk");
-		    		}
-
-		    		//Compute train properties based on wagons
-
-		    		this.power += wagon.power;
-		    		this.wagonsMax += wagon.wagonsMax;
-		    		this.capacity += wagon.capacity;
-	    		});   		
-	    	});
-      	});
 	}
 
 }
