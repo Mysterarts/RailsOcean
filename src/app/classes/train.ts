@@ -42,7 +42,6 @@ export class Train {
 
 				    			if(wagon.type == "loco"){
 					    			this.idLoco = this.wagons.length - 1;
-					    			console.log("LocoOk");
 					    		}
 
 					    		//Compute train properties based on wagons
@@ -50,10 +49,9 @@ export class Train {
 					    		this.power += wagon.power;
 					    		this.wagonsMax += wagon.wagonsMax;
 					    		this.capacity += wagon.capacity;
-			    			})
-			    			.then((res) => {
-			    				resolve(wagon);
-			    			})
+
+					    		resolve(wagon);
+			    			});
 		    		});
 
 		    		promises.push(promise);

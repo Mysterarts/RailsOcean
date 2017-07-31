@@ -13,25 +13,35 @@ export class Player {
 		
 	}
 
-	populate(id: number): Promise<void> {
+	populate(id: number): Promise<any[]> {
 
-		return this.services.playerService.getById(id).then((player) => {
-      		Object.keys(player).forEach((key) => {
-	        	this[key] = player[key];
-	    	});
+		return this.services.playerService.getById(id)
+			.then((player) => {
+	      		Object.keys(player).forEach((key) => {
+		        	this[key] = player[key];
+		    	});
 
-      	
-    		this.trains = new Array;
-    		this.idTrains.forEach((id) => {
-    			let train = new Train(this.services);
-	    		train.populate(id).then((p) => {
-	    			console.log(train.wagons[2].name);
-	    		});
-	    		this.trains.push(train);
-	    	});
-			
-      	});
+	      	
+	    		this.trains = new Array;
+	    		let promises = new Array;
 
+	    		this.idTrains.forEach((id) => {
+	    			let train = new Train(this.services);
+
+	    			let promise = new Promise((resolve, reject) => {
+
+			    		train.populate(id).then((p) => {
+			    			resolve(train);
+			    		});
+			    		this.trains.push(train);
+
+			    	});
+
+			    	promises.push(promise);
+		    	});
+
+		    	return Promise.all(promises);
+	      	});
 	}
 
 }
