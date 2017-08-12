@@ -1,12 +1,21 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Wagons
-    </ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<ion-title>Wagons</ion-title>
+		<ion-buttons end>
+	      	<button ion-button icon-only>
+	        	<ion-icon name="create"></ion-icon>
+	      	</button>
+	    </ion-buttons>
+	</ion-navbar>
 </ion-header>
 
 <ion-content padding>
+
+	<ion-list>
+		<button ion-item *ngFor="let wagon of train.wagons">
+			{{wagon.name}}
+		</button>  
+	</ion-list>
 
 	<button ion-button color="primary" (click)="scheduleNotification()">Toggle Notif</button>
 

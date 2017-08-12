@@ -1,31 +1,29 @@
 import { Injectable }    from '@angular/core';
-import { Http } from '@angular/http';
+import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Player } from './player';
+import { Resource } from './resource';
 
 @Injectable()
-export class PlayerService {
+export class ResourceService {
 
-	private apiUrl = 'api/players';  // URL to web api
+	private apiUrl = 'api/resources';  // URL to web api
 
 	constructor(private http: Http) { }
 
-	getAll(): Promise<Player[]> {
+	getAll(): Promise<Resource[]> {
 	  return this.http.get(this.apiUrl)
 	             .toPromise()
-	             .then(response => response.json().data as Player[])
+	             .then(response => response.json().data as Resource[])
 	             .catch(this.handleError);
 	}
 
-	getById(id: number): Promise<Player> {
-		const url = `${this.apiUrl}/?id=${id}`;
+	getById(id: number): Promise<Resource> {
+		const url = `${this.apiUrl}/${id}`;
 		return this.http.get(url)
 	    		   .toPromise()
-	    		   .then((response) => {
-	    		   	//console.log(response);
-	    		   	return response.json().data[0] as Player})
+	    		   .then(response => response.json().data as Resource)
 	    		   .catch(this.handleError);
 	}
     

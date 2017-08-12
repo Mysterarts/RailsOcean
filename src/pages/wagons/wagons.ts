@@ -4,6 +4,8 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
 
 import { GameService }  from '../../app/classes/game.service';
 
+import { Train }        from '../../app/classes/train';
+import { Player }        from '../../app/classes/player';
 
 @Component({
 	selector: 'page-wagons',
@@ -11,7 +13,9 @@ import { GameService }  from '../../app/classes/game.service';
 })
 export class WagonsPage {
 
-  constructor(public navCtrl: NavController, private plt: Platform, private localNotifications: LocalNotifications, alertCtrl: AlertController) {
+	train: Train;
+
+  	constructor(public navCtrl: NavController, private plt: Platform, private localNotifications: LocalNotifications, alertCtrl: AlertController, private gameService: GameService) {
 		this.plt.ready().then((readySource) => {
 			this.localNotifications.on('click', (notification, state) => {
 				let json = JSON.parse(notification.data);
@@ -23,6 +27,9 @@ export class WagonsPage {
 				alert.present();
 			})
 		});
+
+		this.train = this.gameService.player.trains[0];
+		console.log(this.train.wagons[0]);
 	}
 
 	scheduleNotification() {
@@ -34,5 +41,4 @@ export class WagonsPage {
 			at: new Date(new Date().getTime() + 5 * 1000)
 		});
 	}
-
 }
