@@ -28,9 +28,9 @@ export class WagonsPage {
 			})
 		});
 
-		//Todo: manage data ready condition
-		this.train = this.gameService.player.trains[0];
-		console.log(this.train.wagons[0]);
+		this.gameService.isDataReady().then((promise) => {
+			this.train = this.gameService.player.trains[0];
+		});
 	}
 
 	scheduleNotification() {

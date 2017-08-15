@@ -16,7 +16,9 @@ export class TrainPage implements OnInit {
 	train: Train;
 
 	constructor(public navCtrl: NavController, private gameService: GameService, private trainService: TrainService) {
-    gameService.dataReadyEvent.subscribe(p => this.onDataReady(p));
+    //gameService.dataReadyEvent.subscribe(p => this.onDataReady(p));
+
+    this.gameService.isDataReady().then(promise => this.train = this.gameService.player.trains[0]);
 	}
 
 	ngOnInit(): void {
@@ -30,8 +32,10 @@ export class TrainPage implements OnInit {
           */
 	}
 
+/*
   onDataReady(p: Player){
     this.train = p.trains[0]; //take the first train
   }
+  */
 
 }

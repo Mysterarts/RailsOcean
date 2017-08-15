@@ -11,15 +11,7 @@
 
 <ion-content padding>
 
-<!--
-	<ion-list>
-		<button ion-item *ngFor="let wagon of train.wagons">
-			{{wagon.name}}
-		</button>  
-	</ion-list>
--->
-
-	<ion-list>
+	<ion-list *ngIf="train">
 		<ion-item *ngFor="let wagon of train.wagons">
 			<ion-avatar item-start>
 				<img src="assets/img/wagon.png">

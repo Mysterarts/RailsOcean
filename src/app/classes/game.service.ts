@@ -16,23 +16,41 @@ export class GameService {
 	player: Player;
 	resources: Resource[];
   	services: GameServices;
-  	dataReadyEvent: EventEmitter<Player>;
+  	//dataReadyEvent: EventEmitter<Player>;
+  	dataReady:boolean = false;
 
 	constructor(private playerService: PlayerService, private trainService: TrainService, private wagonService: WagonService, private resourceService: ResourceService) {
-		this.dataReadyEvent = new EventEmitter();
+		//this.dataReadyEvent = new EventEmitter();
 
 		this.services = {playerService, trainService, wagonService, resourceService};
 
+		//this.refreshData();
+	}
+
+	refreshData(): Promise<void>{
+
 		//Populate resources
-		this.resourceService.getAll().then((promise) => {
+		return this.resourceService.getAll().then((promise) => {
 			this.resources = promise;
 
 			//Populuate player (with train and wagons)
 			this.player = new Player(this.services);
-			this.player.populate(this.playerId).then((promise) => {
+			return this.player.populate(this.playerId).then((promise) => {
 				console.log(this.player);
-				this.dataReadyEvent.emit(this.player);
+				this.dataReady = true;
+				//this.dataReadyEvent.emit(this.player);
 			});
 		});
+	}
+
+	isDataReady(): Promise<void>{
+		if(!this.dataReady)
+		{
+			//console.log("data to fetch")
+			return this.refreshData();
+		}else{
+			//console.log("data already fetched");
+			return Promise.resolve();
+		}
 	}
 }
