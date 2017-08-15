@@ -26,7 +26,6 @@ export class GameService {
 		//Populate resources
 		this.resourceService.getAll().then((promise) => {
 			this.resources = promise;
-			console.log(this.resources);
 
 			//Populuate player (with train and wagons)
 			this.player = new Player(this.services);

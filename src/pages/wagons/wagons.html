@@ -11,10 +11,23 @@
 
 <ion-content padding>
 
+<!--
 	<ion-list>
 		<button ion-item *ngFor="let wagon of train.wagons">
 			{{wagon.name}}
 		</button>  
+	</ion-list>
+-->
+
+	<ion-list>
+		<ion-item *ngFor="let wagon of train.wagons">
+			<ion-avatar item-start>
+				<img src="assets/img/wagon.png">
+			</ion-avatar>
+			<h2>{{wagon.name}}</h2>
+			<h3>{{wagon.content.resource | resource | capitalize}}</h3>
+			<p>{{wagon.content.quantity}} / {{wagon.capacity}}</p>
+		</ion-item>
 	</ion-list>
 
 	<button ion-button color="primary" (click)="scheduleNotification()">Toggle Notif</button>

@@ -7,7 +7,10 @@ import { HttpModule }             from '@angular/http';
 
 import { InMemoryWebApiModule }   from 'angular-in-memory-web-api';
 import { InMemoryDataService }    from './in-memory-data.service';
-  
+
+import { ResourcePipe }           from './utils/resource.pipe';
+import { CapitalizePipe }         from './utils/capitalize.pipe';
+
 import { PlayerService }          from './classes/player.service';
 import { TrainService }           from './classes/train.service';
 import { WagonService }           from './classes/wagon.service';
@@ -27,6 +30,8 @@ import { SplashScreen }           from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
+    ResourcePipe,
+    CapitalizePipe,
     TrainPage,
     WagonsPage,
     StationPage,
