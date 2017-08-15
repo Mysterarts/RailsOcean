@@ -20,7 +20,6 @@ export class Player {
 	      		Object.keys(player).forEach((key) => {
 		        	this[key] = player[key];
 		    	});
-
 	      	
 	    		this.trains = new Array;
 	    		let promises = new Array;

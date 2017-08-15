@@ -8,7 +8,7 @@ import { Resource } from './resource';
 @Injectable()
 export class ResourceService {
 
-	private apiUrl = 'api/resources';  // URL to web api
+	private apiUrl = 'api/resourcesData';  // URL to web api
 
 	constructor(private http: Http) { }
 

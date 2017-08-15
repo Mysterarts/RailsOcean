@@ -28,14 +28,18 @@ export class Train {
 		        	this[key] = train[key];
 		    	});
 
+				return this.services.wagonService.getAllbyTrainId(id);
+			})
+			.then((wagonsContent) => {
+
 				this.wagons = new Array;
 				let promises = new Array;
 
-	    		this.idWagons.forEach((id) => {
-	    			let wagon = new Wagon(this.services);
+	    		wagonsContent.forEach((wagonContent) => {
+	    			let wagon = new Wagon(this.services, wagonContent);
 
 	    			let promise = new Promise((resolve, reject) => {
-			    			wagon.populate(id)
+			    			wagon.populate(wagonContent.idWagon)
 			    			.then((res) => {
 
 				    			this.wagons.push(wagon);

@@ -12,13 +12,13 @@ export class Wagon {
 	wagonsMax: number = 0;
 	capacity: number = 0;
 
-	constructor(private services: GameServices) {
+	constructor(private services: GameServices, private content) {
 		
 	}
 
 	populate(id: number): Promise<void>  {
 
-		return this.services.wagonService.getById(id).then((wagon) => {
+		return this.services.wagonService.getDataById(id).then((wagon) => {
       		Object.keys(wagon).forEach((key) => {
 	        	this[key] = wagon[key];
 	    	});
