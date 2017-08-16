@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter }    from '@angular/core';
+import { Injectable }    from '@angular/core';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -16,16 +16,13 @@ export class GameService {
 	player: Player;
 	resources: Resource[];
   	services: GameServices;
-  	//dataReadyEvent: EventEmitter<Player>;
   	dataReady:boolean = false;
   	dataLoading: boolean = false;
 
 	constructor(private playerService: PlayerService, private trainService: TrainService, private wagonService: WagonService, private resourceService: ResourceService) {
-		//this.dataReadyEvent = new EventEmitter();
 
 		this.services = {playerService, trainService, wagonService, resourceService};
 
-		//this.refreshData();
 	}
 
 	refreshData(): Promise<void>{
