@@ -18,6 +18,7 @@ export class GameService {
   	services: GameServices;
   	//dataReadyEvent: EventEmitter<Player>;
   	dataReady:boolean = false;
+  	dataLoading: boolean = false;
 
 	constructor(private playerService: PlayerService, private trainService: TrainService, private wagonService: WagonService, private resourceService: ResourceService) {
 		//this.dataReadyEvent = new EventEmitter();
@@ -29,6 +30,8 @@ export class GameService {
 
 	refreshData(): Promise<void>{
 
+		console.log("data to fetch");
+
 		//Populate resources
 		return this.resourceService.getAll().then((promise) => {
 			this.resources = promise;
@@ -38,19 +41,40 @@ export class GameService {
 			return this.player.populate(this.playerId).then((promise) => {
 				console.log(this.player);
 				this.dataReady = true;
+				this.dataLoading = false;
 				//this.dataReadyEvent.emit(this.player);
 			});
 		});
 	}
 
-	isDataReady(): Promise<void>{
+	isDataReady(): Promise<void | {}>{
 		if(!this.dataReady)
 		{
-			//console.log("data to fetch")
-			return this.refreshData();
+			if(!this.dataLoading){	
+				this.dataLoading = true;
+				return this.refreshData();
+			}else{
+				return new Promise((resolve, reject) => {
+					this.waitForDataReady(resolve, reject);
+				});
+			}
 		}else{
 			//console.log("data already fetched");
 			return Promise.resolve();
 		}
 	}
+
+	waitForDataReady(resolve, reject) {
+		setTimeout(() => {
+	            if(!this.dataLoading){	
+	            	//console.log("stop");
+	            	resolve();
+	            }else{
+	            	//console.log("continue");
+	            	this.waitForDataReady(resolve, reject);
+	            }
+	        }
+	    ,500);
+	}
 }
+
