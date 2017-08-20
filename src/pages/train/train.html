@@ -17,6 +17,18 @@
 				<ion-list no-border *ngIf="train">
 
 				    <ion-list-header no-margin>
+				    	Situation
+				    </ion-list-header>
+
+				    <ion-item>
+				      <ion-icon name='pin' item-start></ion-icon>
+				      	Station
+				      <ion-note item-end color="primary">
+				      	{{gameService.station.name}}
+				      </ion-note>
+				    </ion-item>
+
+				    <ion-list-header no-margin>
 				    	Locomotive
 				    </ion-list-header>
 

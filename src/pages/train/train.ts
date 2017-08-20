@@ -17,7 +17,9 @@ export class TrainPage {
 
 	constructor(public navCtrl: NavController, private gameService: GameService, private trainService: TrainService) {
 
-    this.gameService.isDataReady().then(promise => this.train = this.gameService.player.trains[0]);
+    	this.gameService.isDataReady().then((promise) => {
+    		this.train = this.gameService.player.trains[this.gameService.trainIndex];
+    	});
 	}
 
 }

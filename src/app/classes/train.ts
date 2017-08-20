@@ -9,6 +9,7 @@ export class Train {
 	idWagons: number[];
 	wagons: Wagon[];
 	idLoco: number;
+	idStation: number;
 
 	// Properties from wagons
 	power: number = 0;
