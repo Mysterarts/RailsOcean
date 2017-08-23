@@ -7,6 +7,7 @@ import { TrainService } from './train.service';
 import { WagonService } from './wagon.service';
 import { ResourceService } from './resource.service';
 import { StationService } from './station.service';
+import { StationResourceService } from './stationResource.service';
 import { GameServices } from './game.services';
 import { Player } from './player';
 import { Resource } from './resource';
@@ -23,7 +24,7 @@ export class GameService {
   	dataReady:boolean = false;
   	dataLoading: boolean = false;
 
-	constructor(private playerService: PlayerService, private trainService: TrainService, private wagonService: WagonService, private resourceService: ResourceService, private stationService: StationService) {
+	constructor(private playerService: PlayerService, private trainService: TrainService, private wagonService: WagonService, private resourceService: ResourceService, private stationService: StationService, private stationResourceService: StationResourceService) {
 
 		this.services = {playerService, trainService, wagonService, resourceService};
 
@@ -40,8 +41,9 @@ export class GameService {
 			return this.player.populate(this.playerId).then((promise) => {
 				console.log(this.player);
 
-				this.station = new Station(this.stationService);
+				this.station = new Station(this.stationService, this.stationResourceService);
 				return this.station.populate(this.player.trains[this.trainIndex].idStation).then((promise) => {
+					console.log(this.station.resources);
 					this.dataReady = true;
 					this.dataLoading = false;
 					//this.dataReadyEvent.emit(this.player);

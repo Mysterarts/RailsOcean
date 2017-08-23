@@ -16,7 +16,8 @@ export class InMemoryDataService implements InMemoryDbService {
     const wagons = [
       { id: 0, idTrain:0, idWagon:0, idResource:0, quantity:100 },
       { id: 1, idTrain:0, idWagon:2, idResource:1, quantity:50 },
-      { id: 2, idTrain:0, idWagon:2, idResource:1, quantity:80 }
+      { id: 2, idTrain:0, idWagon:2, idResource:1, quantity:80 },
+      { id: 2, idTrain:1, idWagon:2, idResource:1, quantity:80 }
     ];
 
     const stations = [

@@ -16,6 +16,7 @@ import { TrainService }           from './classes/train.service';
 import { WagonService }           from './classes/wagon.service';
 import { ResourceService }        from './classes/resource.service';
 import { StationService }         from './classes/station.service';
+import { StationResourceService } from './classes/stationResource.service';
 import { GameService }            from './classes/game.service';
 
 import { TrainPage }              from '../pages/train/train';
@@ -63,6 +64,7 @@ import { SplashScreen }           from '@ionic-native/splash-screen';
     WagonService,
     ResourceService,
     StationService,
+    StationResourceService,
     GameService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

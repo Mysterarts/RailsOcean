@@ -22,7 +22,7 @@ export class WagonService {
 
 	getAllbyTrainId(id: number): Promise<any[]> {
 	  const url = `${this.apiUrl}/?idTrain=${id}`;
-	  return this.http.get(this.apiUrl)
+	  return this.http.get(url)
 	             .toPromise()
 	             .then(response => response.json().data as Wagon[])
 	             .catch(this.handleError);
