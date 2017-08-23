@@ -28,11 +28,11 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const sections = [
-      { from: 0, to: 1, distance: 100, risk:0 },
-      { from: 0, to: 2, distance: 150, risk:1 },
-      { from: 1, to: 3, distance: 200, risk:2 },
-      { from: 3, to: 4, distance: 100, risk:0 },
-      { from: 2, to: 4, distance: 400, risk:4 }
+      { id: 0, from: 0, to: 1, distance: 100, risk:0 },
+      { id: 1, from: 0, to: 2, distance: 150, risk:1 },
+      { id: 2, from: 1, to: 3, distance: 200, risk:2 },
+      { id: 3, from: 3, to: 4, distance: 100, risk:0 },
+      { id: 4, from: 2, to: 4, distance: 400, risk:4 }
     ];
 
     const stationResources = [

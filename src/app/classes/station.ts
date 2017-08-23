@@ -2,6 +2,8 @@ import 'rxjs/add/operator/toPromise';
 
 import { StationService } from './station.service';
 import { StationResource } from './stationResource';
+import { Section } from './section';
+import { SectionService } from './section.service';
 import { StationResourceService } from './stationResource.service';
 
 export class Station {
@@ -9,8 +11,9 @@ export class Station {
   	name: string;
   	//sections: Section[];
   	resources: StationResource[];
+  	sections: Section[];
 
-	constructor(private stationService: StationService, private stationResourceService: StationResourceService) {
+	constructor(private stationService: StationService, private stationResourceService: StationResourceService, private sectionService: SectionService) {
 		
 	}
 
@@ -22,8 +25,14 @@ export class Station {
 	    	});
 
 	    	return this.stationResourceService.getAllbyStationId(id).then((ress) => {
-	    		console.log(ress);
+	    		//console.log(ress);
 	    		this.resources = ress;
+
+	    		return this.sectionService.getAllFromStationId(id).then((sects) => {
+	    			console.log(sects);
+	    			this.sections = sects;
+
+	    		});
 	    	});
 
       	});
