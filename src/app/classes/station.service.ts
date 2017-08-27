@@ -5,9 +5,6 @@ import 'rxjs/add/operator/toPromise';
 
 import { Station } from './station';
 
-import { SectionService } from './section.service';
-import { StationResourceService } from './stationResource.service';
-
 @Injectable()
 export class StationService {
 
@@ -28,8 +25,11 @@ export class StationService {
 		return this.http.get(url)
 	    		   .toPromise()
 	    		   .then((response) => {
-	    		   	//console.log(response);
-	    		   	return response.json().data[0] as Station})
+		    		   	if(response.json().data.length == 0){
+		    		   		console.warn("DATA ERROR: the station with id: "+id+" doesn't exist");
+		    		   	}
+		    		   	return response.json().data[0] as Station
+	    		   	})
 	    		   .catch(this.handleError);
 	}
 

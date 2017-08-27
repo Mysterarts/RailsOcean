@@ -12,28 +12,50 @@ import { Station } from '../../app/classes/station';
 export class StationPage {
 
 	station: Station;
+	idCurrentStation: number;
+	destStatus: string;
 
   	constructor(public navCtrl: NavController, private gameService: GameService, public navParams: NavParams) {
 
 	  	this.gameService.isDataReady().then((promise) => {
+			this.idCurrentStation = this.gameService.station.id;
+
 			if(navParams.get("idStation") == undefined){	
 				this.station = this.gameService.station;
+				this.destStatus = "same";
 			}else{
 				let idStation = navParams.get("idStation");
-				console.log(idStation);
-				
+
 				gameService.getStationById(idStation).then((station) => {
 					this.station = station;
+					this.destStatus = "distant";
+
+					if(this.station.id == this.idCurrentStation){
+						this.destStatus = "same";
+					}else{
+						station.sections.forEach((section) => {
+							if(section.to == this.idCurrentStation || section.from == this.idCurrentStation){
+								this.destStatus = "ok";
+							}
+						});
+					}
 				});
 			}
 		});
 
   	}
 
-  	goToStation(idStation: number){
+  	goToStationPage(idStation: number){
   		this.navCtrl.push(StationPage, {
 	    	idStation: idStation
 	    });
+  	}
+
+  	goToStation(){
+  		if(this.destStatus == "ok"){
+  			this.gameService.goToStation(this.station);
+	  		this.navCtrl.push(StationPage);
+  		}
   	}
 
 }

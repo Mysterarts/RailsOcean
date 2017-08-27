@@ -89,5 +89,9 @@ export class GameService {
 			return station;
 		});
 	}
+
+	goToStation(station: Station){
+		this.station = station;
+	}
 }
 
