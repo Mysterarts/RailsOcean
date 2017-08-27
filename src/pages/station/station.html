@@ -9,21 +9,32 @@
       <ion-list-header no-margin>
         Available resources
       </ion-list-header>
-      <ion-item *ngFor="let res of station.resources">
+      <ion-item *ngFor="let res of station.resourcesSell">
         <ion-avatar item-start>
           <img src="assets/img/wagon.png">
         </ion-avatar>
         <h3>{{res.idResource | resource | capitalize}}</h3>
       </ion-item>
+
       <ion-list-header no-margin>
-        Next stations
+        Sought resources
       </ion-list-header>
-      <ion-item *ngFor="let section of station.sections">
+      <ion-item *ngFor="let res of station.resourcesBuy">
         <ion-avatar item-start>
           <img src="assets/img/wagon.png">
         </ion-avatar>
-        <h2>{{section.to}}</h2>
-        <h3>Distance: {{section.distance}}</h3>
+        <h3>{{res.idResource | resource | capitalize}}</h3>
       </ion-item>
+
+      <ion-list-header no-margin>
+        Next stations
+      </ion-list-header>
+      <button ion-item *ngFor="let section of station.sections" (click)="goToStation(section.toStation.id)">
+        <ion-avatar item-start>
+          <img src="assets/img/wagon.png">
+        </ion-avatar>
+        <h2>{{section.toStation.name}}</h2>
+        <h3>Distance: {{section.distance}}</h3>
+      </button>
     </ion-list>
 </ion-content>

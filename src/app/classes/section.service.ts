@@ -21,9 +21,20 @@ export class SectionService {
 
 	getAllFromStationId(id: number): Promise<any[]> {
 	  const url = `${this.apiUrl}/?from=${id}`;
+	  const url2 = `${this.apiUrl}/?to=${id}`;
+	  let allSections: Section[];
+
 	  return this.http.get(url)
 	             .toPromise()
-	             .then(response => response.json().data as Section[])
+	             .then((response) => {
+	             	allSections = response.json().data as Section[];
+
+	             	return this.http.get(url2)
+		             .toPromise()
+		             .then((response) => {
+		             	return allSections.concat(response.json().data as Section[]);
+		             });
+	             })
 	             .catch(this.handleError);
 	}
 

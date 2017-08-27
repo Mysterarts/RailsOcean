@@ -1,6 +1,7 @@
 import 'rxjs/add/operator/toPromise';
 
 import { GameServices } from './game.services';
+import { Station } from './station';
 
 export class Section {
 	id: number;
@@ -8,6 +9,7 @@ export class Section {
 	to: number;
 	distance: number;
 	risk: number;
+	toStation: Station;
 
 	constructor(private services: GameServices) {
 		

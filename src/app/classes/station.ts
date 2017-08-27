@@ -10,14 +10,15 @@ export class Station {
 	id: number;
   	name: string;
   	//sections: Section[];
-  	resources: StationResource[];
+  	resourcesSell: StationResource[];
+  	resourcesBuy: StationResource[];
   	sections: Section[];
 
 	constructor(private stationService: StationService, private stationResourceService: StationResourceService, private sectionService: SectionService) {
 		
 	}
 
-	populate(id: number): Promise<void>  {
+	populate(id: number): Promise<any[]>  {
 
 		return this.stationService.getById(id).then((station) => {
       		Object.keys(station).forEach((key) => {
@@ -26,51 +27,50 @@ export class Station {
 
 	    	return this.stationResourceService.getAllbyStationId(id).then((ress) => {
 	    		//console.log(ress);
-	    		this.resources = ress;
+	    		this.resourcesSell = new Array();
+	    		this.resourcesBuy = new Array();
+
+	    		ress.forEach((res) => {
+	    			if(res.type == "sell"){
+	    				this.resourcesSell.push(res);
+	    			}else{
+	    				this.resourcesBuy.push(res);
+	    			}
+	    		});
 
 	    		return this.sectionService.getAllFromStationId(id).then((sects) => {
-	    			console.log(sects);
+	    			//console.log(sects);
 	    			this.sections = sects;
 
+	    		}).then((promise) => {
+	    			
+	    			let promises = new Array;
+
+		    		this.sections.forEach((section) => {
+
+		    			let promise = new Promise((resolve, reject) => {
+								let idStationTo = section.to;
+
+			    				if(section.to == id){
+			    					idStationTo = section.from;
+			    				}
+
+				    			this.stationService.getById(idStationTo)
+				    			.then((toStation) => {
+
+					    			section.toStation = toStation;
+
+						    		resolve(toStation);
+				    			});
+			    		});
+
+			    		promises.push(promise);
+		    		})
+		    		
+		    		return Promise.all(promises);	
 	    		});
 	    	});
 
       	});
 	}
-
-	/*
-
-	populate(id: number): Promise<any[]> {
-
-		return this.stationService.getById(id)
-			.then((player) => {
-	      		Object.keys(player).forEach((key) => {
-		        	this[key] = player[key];
-		    	});
-	      	
-	      		
-	    		this.trains = new Array;
-	    		let promises = new Array;
-
-	    		this.idTrains.forEach((id) => {
-	    			let train = new Train(this.services);
-
-	    			let promise = new Promise((resolve, reject) => {
-
-			    		train.populate(id).then((p) => {
-			    			resolve(train);
-			    		});
-			    		this.trains.push(train);
-
-			    	});
-
-			    	promises.push(promise);
-		    	});
-
-		    	return Promise.all(promises);
-		    	
-
-	      	});
-	}
-	*/
 }

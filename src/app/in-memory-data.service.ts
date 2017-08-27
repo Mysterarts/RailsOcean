@@ -31,16 +31,18 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 0, from: 0, to: 1, distance: 100, risk:0 },
       { id: 1, from: 0, to: 2, distance: 150, risk:1 },
       { id: 2, from: 1, to: 3, distance: 200, risk:2 },
-      { id: 3, from: 3, to: 4, distance: 100, risk:0 },
-      { id: 4, from: 2, to: 4, distance: 400, risk:4 }
+      { id: 3, from: 3, to: 1, distance: 100, risk:0 },
+      { id: 4, from: 2, to: 3, distance: 400, risk:4 }
     ];
 
     const stationResources = [
-      { id: 0, idStation: 0, idResource:0, quantity: 100 },
-      { id: 0, idStation: 0, idResource:1, quantity: 200 },
-      { id: 0, idStation: 1, idResource:0, quantity: 1000 },
-      { id: 0, idStation: 2, idResource:0, quantity: 100 },
-      { id: 0, idStation: 2, idResource:2, quantity: 300 }
+      { id: 0, idStation: 0, idResource:0, type: 'sell', quantity: 100 },
+      { id: 0, idStation: 0, idResource:1, type: 'sell', quantity: 200 },
+      { id: 0, idStation: 1, idResource:0, type: 'sell', quantity: 1000 },
+      { id: 0, idStation: 2, idResource:0, type: 'sell', quantity: 100 },
+      { id: 0, idStation: 2, idResource:2, type: 'sell', quantity: 300 },
+      { id: 0, idStation: 0, idResource:2, type: 'buy',  quantity: 100 },
+      { id: 0, idStation: 1, idResource:2, type: 'buy',  quantity: 300 }
     ];
 
     const stationWagons = [

@@ -44,7 +44,7 @@ export class GameService {
 
 				this.station = new Station(this.stationService, this.stationResourceService, this.sectionService);
 				return this.station.populate(this.player.trains[this.trainIndex].idStation).then((promise) => {
-					console.log(this.station.resources);
+					//console.log(this.station.resourcesSell);
 					this.dataReady = true;
 					this.dataLoading = false;
 					//this.dataReadyEvent.emit(this.player);
@@ -81,6 +81,13 @@ export class GameService {
 	            }
 	        }
 	    ,500);
+	}
+
+	getStationById(id: number): Promise<Station>{
+		let station = new Station(this.stationService, this.stationResourceService, this.sectionService);
+		return station.populate(id).then((promise) =>{
+			return station;
+		});
 	}
 }
 
