@@ -9,6 +9,7 @@ import { Train } from './train';
 export class TrainService {
 
 	private apiUrl = 'api/trains';  // URL to web api
+	private headers = new Headers({'Content-Type': 'application/json'});
 
 	constructor(private http: Http) { }
 
@@ -26,6 +27,15 @@ export class TrainService {
 	    		   .then(response => response.json().data as Train)
 	    		   .catch(this.handleError);
 	}
+
+	update(train: Train): Promise<Train> {
+	    const url = `${this.apiUrl}/${train.id}`;
+	    return this.http
+	      .put(url, JSON.stringify(train), {headers: this.headers})
+	      .toPromise()
+	      .then(() => train)
+	      .catch(this.handleError);
+	 }
     
 
 	private handleError(error: any): Promise<any> {

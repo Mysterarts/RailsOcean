@@ -34,7 +34,7 @@ export class StationPage {
 						this.destStatus = "same";
 					}else{
 						station.sections.forEach((section) => {
-							if(section.to == this.idCurrentStation || section.from == this.idCurrentStation){
+							if(section.idStation2 == this.idCurrentStation || section.idStation1 == this.idCurrentStation){
 								this.destStatus = "ok";
 							}
 						});

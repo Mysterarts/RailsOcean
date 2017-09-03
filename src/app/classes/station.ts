@@ -49,10 +49,10 @@ export class Station {
 		    		this.sections.forEach((section) => {
 
 		    			let promise = new Promise((resolve, reject) => {
-								let idStationTo = section.to;
+								let idStationTo = section.idStation1;
 
-			    				if(section.to == id){
-			    					idStationTo = section.from;
+			    				if(section.idStation1 == id){
+			    					idStationTo = section.idStation2;
 			    				}
 
 				    			this.stationService.getById(idStationTo)

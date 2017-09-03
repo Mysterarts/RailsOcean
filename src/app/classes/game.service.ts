@@ -91,7 +91,9 @@ export class GameService {
 	}
 
 	goToStation(station: Station){
-		this.station = station;
+		//this.station = station;
+		//this.player.trains[this.trainIndex].idStation = station.id;
+		//this.trainService.update(this.player.trains[this.trainIndex]);
 	}
 }
 

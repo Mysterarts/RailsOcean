@@ -5,8 +5,8 @@ import { Station } from './station';
 
 export class Section {
 	id: number;
-	from: number;
-	to: number;
+	idStation1: number;
+	idStation2: number;
 	distance: number;
 	risk: number;
 	toStation: Station;

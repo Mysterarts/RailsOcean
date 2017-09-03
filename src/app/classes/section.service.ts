@@ -20,8 +20,8 @@ export class SectionService {
 	}
 
 	getAllFromStationId(id: number): Promise<any[]> {
-	  const url = `${this.apiUrl}/?from=${id}`;
-	  const url2 = `${this.apiUrl}/?to=${id}`;
+	  const url = `${this.apiUrl}/?idStation1=${id}`;
+	  const url2 = `${this.apiUrl}/?idStation2=${id}`;
 	  let allSections: Section[];
 
 	  return this.http.get(url)

@@ -17,7 +17,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 0, idTrain:0, idWagon:0, idResource:0, quantity:100 },
       { id: 1, idTrain:0, idWagon:2, idResource:1, quantity:50 },
       { id: 2, idTrain:0, idWagon:2, idResource:1, quantity:80 },
-      { id: 2, idTrain:1, idWagon:2, idResource:1, quantity:80 }
+      { id: 3, idTrain:1, idWagon:2, idResource:1, quantity:80 }
     ];
 
     const stations = [
@@ -28,29 +28,29 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const sections = [
-      { id: 0, from: 0, to: 1, distance: 100, risk:0 },
-      { id: 1, from: 0, to: 2, distance: 150, risk:1 },
-      { id: 2, from: 1, to: 3, distance: 200, risk:2 },
-      { id: 3, from: 3, to: 1, distance: 100, risk:0 },
-      { id: 4, from: 2, to: 3, distance: 400, risk:4 }
+      { id: 0, idStation1: 0, idStation2: 1, distance: 100, risk:0 },
+      { id: 1, idStation1: 0, idStation2: 2, distance: 150, risk:1 },
+      { id: 2, idStation1: 0, idStation2: 3, distance: 200, risk:2 },
+      { id: 3, idStation1: 3, idStation2: 1, distance: 100, risk:0 },
+      { id: 4, idStation1: 2, idStation2: 3, distance: 400, risk:4 }
     ];
 
     const stationResources = [
       { id: 0, idStation: 0, idResource:0, type: 'sell', quantity: 100 },
-      { id: 0, idStation: 0, idResource:1, type: 'sell', quantity: 200 },
-      { id: 0, idStation: 1, idResource:0, type: 'sell', quantity: 1000 },
-      { id: 0, idStation: 2, idResource:0, type: 'sell', quantity: 100 },
-      { id: 0, idStation: 2, idResource:2, type: 'sell', quantity: 300 },
-      { id: 0, idStation: 0, idResource:2, type: 'buy',  quantity: 100 },
-      { id: 0, idStation: 1, idResource:2, type: 'buy',  quantity: 300 }
+      { id: 1, idStation: 0, idResource:1, type: 'sell', quantity: 200 },
+      { id: 2, idStation: 1, idResource:0, type: 'sell', quantity: 1000 },
+      { id: 3, idStation: 2, idResource:0, type: 'sell', quantity: 100 },
+      { id: 4, idStation: 2, idResource:2, type: 'sell', quantity: 300 },
+      { id: 5, idStation: 0, idResource:2, type: 'buy',  quantity: 100 },
+      { id: 6, idStation: 1, idResource:2, type: 'buy',  quantity: 300 }
     ];
 
     const stationWagons = [
       { id: 0, idStation: 0, idWagon:0, quantity: 1, price: 1000 },
-      { id: 0, idStation: 0, idWagon:2, quantity: 1, price: 100 },
-      { id: 0, idStation: 0, idWagon:3, quantity: 1, price: 200 },
-      { id: 0, idStation: 1, idWagon:2, quantity: 1, price: 100 },
-      { id: 0, idStation: 2, idWagon:1, quantity: 1, price: 800 }
+      { id: 1, idStation: 0, idWagon:2, quantity: 1, price: 100 },
+      { id: 2, idStation: 0, idWagon:3, quantity: 1, price: 200 },
+      { id: 3, idStation: 1, idWagon:2, quantity: 1, price: 100 },
+      { id: 4, idStation: 2, idWagon:1, quantity: 1, price: 800 }
     ]; 
 
     const wagonsData = [
