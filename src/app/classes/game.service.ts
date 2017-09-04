@@ -29,6 +29,13 @@ export class GameService {
 
 		this.services = {playerService, trainService, wagonService, resourceService};
 
+		const wagonsData = [
+	      { id: 0, type: 'loco', name: 'Pacific 231 G', power: 100, wagonsMax:6 },
+	      { id: 1, type: 'loco', name: 'Diesel Série 59', power: 200, wagonsMax:9 },
+	      { id: 2, type: 'cont', name: 'Container I', capacity: 100 },
+	      { id: 3, type: 'cont', name: 'Container II', capacity: 200 }
+	    ];
+	    console.log(JSON.stringify(wagonsData));
 	}
 
 	refreshData(): Promise<void>{
@@ -36,6 +43,7 @@ export class GameService {
 		//Populate resources
 		return this.resourceService.getAll().then((promise) => {
 			this.resources = promise;
+			//console.log(this.resources);
 
 			//Populuate player (with train and wagons)
 			this.player = new Player(this.services);

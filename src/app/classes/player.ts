@@ -6,7 +6,8 @@ import { Train } from './train';
 export class Player {
 	id: number;
   	name: string;
-  	idTrains: number[];
+  	idTrains: number;
+  	idTrainsArray: number[];
   	trains: Train[];
 
 	constructor(private services: GameServices) {
@@ -24,7 +25,10 @@ export class Player {
 	    		this.trains = new Array;
 	    		let promises = new Array;
 
-	    		this.idTrains.forEach((id) => {
+	    		//TODO Temp, check idPlayer in trains
+	    		this.idTrainsArray = [this.idTrains];
+
+	    		this.idTrainsArray.forEach((id) => {
 	    			let train = new Train(this.services);
 
 	    			let promise = new Promise((resolve, reject) => {

@@ -8,14 +8,16 @@ import { Resource } from './resource';
 @Injectable()
 export class ResourceService {
 
-	private apiUrl = 'api/resourcesData';  // URL to web api
+	private apiUrl = 'http://rails.mysterarts.com/api.php/resourcesData';  // URL to web api
 
 	constructor(private http: Http) { }
 
 	getAll(): Promise<Resource[]> {
-	  return this.http.get(this.apiUrl)
+	  return this.http.get(this.apiUrl+'?transform=1')
 	             .toPromise()
-	             .then(response => response.json().data as Resource[])
+	             .then((response) => {
+    		   		return response.json().resourcesData as Resource[];
+    		   	 })
 	             .catch(this.handleError);
 	}
 
@@ -23,7 +25,9 @@ export class ResourceService {
 		const url = `${this.apiUrl}/${id}`;
 		return this.http.get(url)
 	    		   .toPromise()
-	    		   .then(response => response.json().data as Resource)
+	    		   .then((response) => {
+	    		   		return response.json() as Resource;
+	    		   	})
 	    		   .catch(this.handleError);
 	}
     

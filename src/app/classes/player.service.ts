@@ -2,30 +2,31 @@ import { Injectable }    from '@angular/core';
 import { Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
 
 import { Player } from './player';
 
 @Injectable()
 export class PlayerService {
 
-	private apiUrl = 'api/players';  // URL to web api
+	private apiUrl = 'http://rails.mysterarts.com/api.php/players';  // URL to web api
 
 	constructor(private http: Http) { }
 
 	getAll(): Promise<Player[]> {
-	  return this.http.get(this.apiUrl)
+	  return this.http.get(this.apiUrl+'?transform=1')
 	             .toPromise()
-	             .then(response => response.json().data as Player[])
+	             .then(response => response.json().players as Player[])
 	             .catch(this.handleError);
 	}
 
 	getById(id: number): Promise<Player> {
-		const url = `${this.apiUrl}/?id=${id}`;
+		const url = `${this.apiUrl}/${id}`;
 		return this.http.get(url)
 	    		   .toPromise()
 	    		   .then((response) => {
-	    		   	//console.log(response);
-	    		   	return response.json().data[0] as Player})
+	    		   	//console.log(response.json());
+	    		   	return response.json() as Player})
 	    		   .catch(this.handleError);
 	}
     

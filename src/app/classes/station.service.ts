@@ -8,27 +8,30 @@ import { Station } from './station';
 @Injectable()
 export class StationService {
 
-	private apiUrl = 'api/stations';  // URL to web api
+	private apiUrl = 'http://rails.mysterarts.com/api.php/stations';  // URL to web api
 
 	constructor(private http: Http) 
 	{ }
 
 	getAll(): Promise<Station[]> {
-	  return this.http.get(this.apiUrl)
+	  return this.http.get(this.apiUrl+'?transform=1')
 	             .toPromise()
-	             .then(response => response.json().data as Station[])
+	             .then(response => response.json().stations as Station[])
 	             .catch(this.handleError);
 	}
 
 	getById(id: number): Promise<Station> {
-		const url = `${this.apiUrl}/?id=${id}`;
+		const url = `${this.apiUrl}/${id}`;
 		return this.http.get(url)
 	    		   .toPromise()
 	    		   .then((response) => {
-		    		   	if(response.json().data.length == 0){
+	    		   		//TODO fix error (and apply it for other resources)
+	    		   		/*
+		    		   	if(response.json() == 0){
 		    		   		console.warn("DATA ERROR: the station with id: "+id+" doesn't exist");
 		    		   	}
-		    		   	return response.json().data[0] as Station
+		    		   	*/
+		    		   	return response.json() as Station
 	    		   	})
 	    		   .catch(this.handleError);
 	}

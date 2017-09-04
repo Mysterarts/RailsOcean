@@ -8,34 +8,34 @@ import { StationResource } from './stationResource';
 @Injectable()
 export class StationResourceService {
 
-	private apiUrl = 'api/stationResources';  // URL to web api
+	private apiUrl = 'http://rails.mysterarts.com/api.php/stationResources';  // URL to web api
 
 	constructor(private http: Http) { }
 
 	getAll(): Promise<StationResource[]> {
-	  return this.http.get(this.apiUrl)
+	  return this.http.get(this.apiUrl+'?transform=1')
 	             .toPromise()
-	             .then(response => response.json().data as StationResource[])
+	             .then(response => response.json().stationResources as StationResource[])
 	             .catch(this.handleError);
 	}
 
 	getAllbyStationId(id: number): Promise<any[]> {
-	  const url = `${this.apiUrl}?idStation=${id}`; 
+	  const url = `${this.apiUrl}?filter=idStation,eq,${id}&transform=1`; 
 	  return this.http.get(url)
 	             .toPromise()
 	             .then((response) => {
-	             	return response.json().data as StationResource[];
+	             	return response.json().stationResources as StationResource[];
 	             })
 	             .catch(this.handleError);
 	}
 
 	getById(id: number): Promise<StationResource> {
-		const url = `${this.apiUrl}/?id=${id}`;
+		const url = `${this.apiUrl}/${id}`;
 		return this.http.get(url)
 	    		   .toPromise()
 	    		   .then((response) => {
 	    		   	//console.log(response);
-	    		   	return response.json().data[0] as StationResource})
+	    		   	return response.json() as StationResource})
 	    		   .catch(this.handleError);
 	}
     

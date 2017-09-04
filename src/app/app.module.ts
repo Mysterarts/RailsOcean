@@ -4,10 +4,10 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { LocalNotifications }     from '@ionic-native/local-notifications';
 import { HttpModule }             from '@angular/http';
-
+/*
 import { InMemoryWebApiModule }   from 'angular-in-memory-web-api';
 import { InMemoryDataService }    from './in-memory-data.service';
-
+*/
 import { ResourcePipe }           from './utils/resource.pipe';
 import { CapitalizePipe }         from './utils/capitalize.pipe';
 
@@ -44,7 +44,6 @@ import { SplashScreen }           from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

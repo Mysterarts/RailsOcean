@@ -8,31 +8,32 @@ import { Section } from './section';
 @Injectable()
 export class SectionService {
 
-	private apiUrl = 'api/sections';
+	private apiUrl = 'http://rails.mysterarts.com/api.php/sections';
 
 	constructor(private http: Http) { }
 
 	getAll(): Promise<Section[]> {
-	  return this.http.get(this.apiUrl)
+	  return this.http.get(this.apiUrl+'?transform=1')
 	             .toPromise()
-	             .then(response => response.json().data as Section[])
+	             .then(response => response.json().sections as Section[])
 	             .catch(this.handleError);
 	}
 
 	getAllFromStationId(id: number): Promise<any[]> {
-	  const url = `${this.apiUrl}/?idStation1=${id}`;
-	  const url2 = `${this.apiUrl}/?idStation2=${id}`;
+	  const url = `${this.apiUrl}?filter=idStation1,eq,${id}&transform=1`;
+	  const url2 = `${this.apiUrl}?filter=idStation2,eq,${id}&transform=1`;
 	  let allSections: Section[];
 
 	  return this.http.get(url)
 	             .toPromise()
 	             .then((response) => {
-	             	allSections = response.json().data as Section[];
+	             	allSections = response.json().sections as Section[];
+	             	console.log(allSections);
 
 	             	return this.http.get(url2)
 		             .toPromise()
 		             .then((response) => {
-		             	return allSections.concat(response.json().data as Section[]);
+		             	return allSections.concat(response.json().sections as Section[]);
 		             });
 	             })
 	             .catch(this.handleError);
@@ -42,7 +43,7 @@ export class SectionService {
 		const url = `${this.apiUrl}/${id}`;
 		return this.http.get(url)
 	    		   .toPromise()
-	    		   .then(response => response.json().data as Section)
+	    		   .then(response => response.json() as Section)
 	    		   .catch(this.handleError);
 	}
 

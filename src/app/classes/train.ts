@@ -25,6 +25,8 @@ export class Train {
 		return this.services.trainService.getById(id)
 			.then((train) => {
 
+				console.log(train);
+
     			Object.keys(train).forEach((key) => {
 		        	this[key] = train[key];
 		    	});
@@ -44,6 +46,7 @@ export class Train {
 			    			.then((res) => {
 
 				    			this.wagons.push(wagon);
+				    			//console.log(wagon);
 
 				    			if(wagon.type == "loco"){
 					    			this.idLoco = this.wagons.length - 1;
