@@ -28,7 +28,6 @@ export class TrainService {
 	    		   .catch(this.handleError);
 	}
 
-	/*
 	update(train: Train): Promise<Train> {
 	    const url = `${this.apiUrl}/${train.id}`;
 	    return this.http
@@ -36,8 +35,7 @@ export class TrainService {
 	      .toPromise()
 	      .then(() => train)
 	      .catch(this.handleError);
-	 }
-    */
+	}
 
 	private handleError(error: any): Promise<any> {
 	  	console.error('An error occurred', error);
