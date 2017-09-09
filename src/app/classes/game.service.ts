@@ -13,6 +13,7 @@ import { GameServices } from './game.services';
 import { Player } from './player';
 import { Resource } from './resource';
 import { Station } from './station';
+import { Section } from './section';
 
 @Injectable()
 export class GameService {
@@ -28,14 +29,6 @@ export class GameService {
 	constructor(private playerService: PlayerService, private trainService: TrainService, private wagonService: WagonService, private resourceService: ResourceService, private stationService: StationService, private stationResourceService: StationResourceService, private sectionService: SectionService) {
 
 		this.services = {playerService, trainService, wagonService, resourceService};
-
-		const wagonsData = [
-	      { id: 0, type: 'loco', name: 'Pacific 231 G', power: 100, wagonsMax:6 },
-	      { id: 1, type: 'loco', name: 'Diesel Série 59', power: 200, wagonsMax:9 },
-	      { id: 2, type: 'cont', name: 'Container I', capacity: 100 },
-	      { id: 3, type: 'cont', name: 'Container II', capacity: 200 }
-	    ];
-	    console.log(JSON.stringify(wagonsData));
 	}
 
 	refreshData(): Promise<void>{
@@ -49,6 +42,7 @@ export class GameService {
 			this.player = new Player(this.services);
 			return this.player.populate(this.playerId).then((promise) => {
 				console.log(this.player);
+				this.updateStatus(0);
 
 				this.station = new Station(this.stationService, this.stationResourceService, this.sectionService);
 				return this.station.populate(this.player.trains[this.trainIndex].idStation).then((promise) => {
@@ -98,10 +92,29 @@ export class GameService {
 		});
 	}
 
-	goToStation(station: Station){
+	goToStation(station: Station, section: Section){
 		this.station = station;
 		this.player.trains[this.trainIndex].idStation = station.id;
+		this.player.trains[this.trainIndex].startTime = (new Date()).valueOf();
+		this.player.trains[this.trainIndex].arrivalTime = (new Date()).valueOf() + section.distance * 100;
+		this.updateStatus(0);
 		this.trainService.update(this.player.trains[this.trainIndex]);
+	}
+
+	updateStatus(delay: number) {
+		//console.log(this.player.trains[this.trainIndex].arrivalTime+" "+(new Date()).valueOf());
+
+		setTimeout(() => {
+            if(this.player.trains[this.trainIndex].arrivalTime <= (new Date()).valueOf()){	
+            	this.player.trains[this.trainIndex].isMoving = false;
+            	//console.log("stop moving");
+            }else{
+            	this.player.trains[this.trainIndex].isMoving = true;
+            	//console.log("continue moving");
+            	this.updateStatus(1000);
+            }
+        }
+	    ,delay);
 	}
 }
 

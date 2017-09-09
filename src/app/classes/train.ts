@@ -10,6 +10,9 @@ export class Train {
 	wagons: Wagon[];
 	idLoco: number;
 	idStation: number;
+	startTime: number;
+	arrivalTime: number;
+	isMoving: boolean = false;
 
 	// Properties from wagons
 	power: number = 0;

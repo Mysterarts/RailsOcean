@@ -5,18 +5,33 @@
 </ion-header>
 
 <ion-content>
-  <ng-container *ngIf="destStatus"> 
-    <ion-card-content *ngIf="destStatus == 'same'">
-      <ion-icon name='pin' item-start></ion-icon>
-      This is the current station of your train
-    </ion-card-content>
-    <ion-card-content *ngIf="destStatus == 'distant'">
-      This station is not directly connected to your current station
-    </ion-card-content>
-    <button ion-button block color="secondary" *ngIf="destStatus == 'ok'" (click)="goToStation()">
-      Go to this station
-    </button>
-  </ng-container>  
+  <ng-container *ngIf="destStatus">
+    <ng-container *ngIf="gameService.player.trains[this.gameService.trainIndex].isMoving == false"> 
+      <ion-card-content *ngIf="destStatus == 'same'">
+        <ion-icon name='pin' item-start></ion-icon>
+        This is the current station of your train
+      </ion-card-content>
+      <ion-card-content *ngIf="destStatus == 'distant'">
+        This station is not directly connected to your current station
+      </ion-card-content>
+      <button ion-button block color="secondary" *ngIf="destStatus == 'ok'" (click)="goToStation()">
+        Go to this station
+      </button>
+    </ng-container>
+
+    <ng-container *ngIf="gameService.player.trains[this.gameService.trainIndex].isMoving"> 
+      <ion-card-content *ngIf="destStatus == 'same'">
+        <ion-icon name='pin' item-start></ion-icon>
+        your train is heading towards this station
+      </ion-card-content>
+      <ion-card-content *ngIf="destStatus == 'distant'">
+        This station is not directly connected to the destination station
+      </ion-card-content>
+      <ion-card-content *ngIf="destStatus == 'ok'">
+        This station will be accessible from the destination station
+      </ion-card-content>
+    </ng-container>
+  </ng-container>
 
   <ion-list *ngIf="station">
       <ion-list-header no-margin>
