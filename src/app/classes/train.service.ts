@@ -1,5 +1,6 @@
 import { Injectable }    from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { ConfigService } from './config.service';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -8,10 +9,12 @@ import { Train } from './train';
 @Injectable()
 export class TrainService {
 
-	private apiUrl = 'http://rails.mysterarts.com/api.php/trains';  // URL to web api
 	private headers = new Headers({'Content-Type': 'application/json'});
+	private apiUrl: string;
 
-	constructor(private http: Http) { }
+	constructor(private http: Http, private configService: ConfigService) { 
+		this.apiUrl = configService.apiUrl+"trains";
+	}
 
 	getAll(): Promise<Train[]> {
 	  return this.http.get(this.apiUrl+'?transform=1')

@@ -1,5 +1,6 @@
 import { Injectable }    from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { ConfigService } from './config.service';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -8,9 +9,11 @@ import { Resource } from './resource';
 @Injectable()
 export class ResourceService {
 
-	private apiUrl = 'http://rails.mysterarts.com/api.php/resourcesData';  // URL to web api
+	private apiUrl: string;
 
-	constructor(private http: Http) { }
+	constructor(private http: Http, private configService: ConfigService) { 
+		this.apiUrl = configService.apiUrl+"resourcesData";
+	}
 
 	getAll(): Promise<Resource[]> {
 	  return this.http.get(this.apiUrl+'?transform=1')

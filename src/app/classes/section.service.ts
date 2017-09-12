@@ -1,5 +1,6 @@
 import { Injectable }    from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { ConfigService } from './config.service';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -8,9 +9,11 @@ import { Section } from './section';
 @Injectable()
 export class SectionService {
 
-	private apiUrl = 'http://rails.mysterarts.com/api.php/sections';
+	private apiUrl: string;
 
-	constructor(private http: Http) { }
+	constructor(private http: Http, private configService: ConfigService) { 
+		this.apiUrl = configService.apiUrl+"sections";
+	}
 
 	getAll(): Promise<Section[]> {
 	  return this.http.get(this.apiUrl+'?transform=1')

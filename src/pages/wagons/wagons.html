@@ -14,7 +14,7 @@
 	<ion-list *ngIf="train">
 		<ion-item *ngFor="let wagon of train.wagons">
 			<ion-avatar item-start>
-				<img src="assets/img/wagon.png">
+				<img src="{{'assets/img/wagon_'+wagon.id+'.png'}}">
 			</ion-avatar>
 			<h2>{{wagon.name}}</h2>
 			<h3>{{wagon.content.idResource | resource | capitalize}}</h3>
@@ -22,6 +22,6 @@
 		</ion-item>
 	</ion-list>
 
-	<button ion-button color="primary" (click)="scheduleNotification()">Toggle Notif</button>
+	<!--<button ion-button color="primary" (click)="scheduleNotification()">Toggle Notif</button>-->
 
 </ion-content>

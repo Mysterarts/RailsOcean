@@ -1,5 +1,6 @@
 import { Injectable }    from '@angular/core';
 import { Http } from '@angular/http';
+import { ConfigService } from './config.service';
 
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
@@ -9,9 +10,11 @@ import { Player } from './player';
 @Injectable()
 export class PlayerService {
 
-	private apiUrl = 'http://rails.mysterarts.com/api.php/players';  // URL to web api
+	private apiUrl: string;
 
-	constructor(private http: Http) { }
+	constructor(private http: Http, private configService: ConfigService) { 
+		this.apiUrl = configService.apiUrl+"players";
+	}
 
 	getAll(): Promise<Player[]> {
 	  return this.http.get(this.apiUrl+'?transform=1')

@@ -1,5 +1,6 @@
 import { Injectable }    from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { ConfigService } from './config.service';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -8,10 +9,13 @@ import { Wagon } from './wagon';
 @Injectable()
 export class WagonService {
 
-	private apiUrl = 'http://rails.mysterarts.com/api.php/wagons';
-	private apiUrlData = 'http://rails.mysterarts.com/api.php/wagonsData';
+	private apiUrlData: string;
+	private apiUrl: string;
 
-	constructor(private http: Http) { }
+	constructor(private http: Http, private configService: ConfigService) { 
+		this.apiUrl = configService.apiUrl+"wagons";
+		this.apiUrlData = configService.apiUrl+"wagonsData";
+	}
 
 	getAll(): Promise<Wagon[]> {
 	  return this.http.get(this.apiUrl+'?transform=1')
