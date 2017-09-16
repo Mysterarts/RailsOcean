@@ -25,6 +25,7 @@ import { TrainPage }              from '../pages/train/train';
 import { WagonsPage }             from '../pages/wagons/wagons';
 import { StationPage }            from '../pages/station/station';
 import { MapPage }                from '../pages/map/map';
+import { ConnexionPage }          from '../pages/connexion/connexion';
 import { TabsPage }               from '../pages/tabs/tabs';
 
 import { StatusBar }              from '@ionic-native/status-bar';
@@ -40,6 +41,7 @@ import { SplashScreen }           from '@ionic-native/splash-screen';
     WagonsPage,
     StationPage,
     MapPage,
+    ConnexionPage,
     TabsPage
   ],
   imports: [
@@ -54,6 +56,7 @@ import { SplashScreen }           from '@ionic-native/splash-screen';
     WagonsPage,
     StationPage,
     MapPage,
+    ConnexionPage,
     TabsPage
   ],
   providers: [
