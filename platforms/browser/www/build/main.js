@@ -96,12 +96,47 @@ webpackEmptyAsyncContext.id = 154;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConnexionPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ConnexionPage = (function () {
+    function ConnexionPage(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    return ConnexionPage;
+}());
+ConnexionPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-connexion',template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/connexion/connexion.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Hello Ionic</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <ion-item>\n      <ion-label floating>Username</ion-label>\n      <ion-input type="text"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Password</ion-label>\n      <ion-input type="password"></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  <button ion-button color="primary">Connexion</button>\n\n</ion-content>'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/connexion/connexion.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
+], ConnexionPage);
+
+//# sourceMappingURL=connexion.js.map
+
+/***/ }),
+
+/***/ 198:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__train_train__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__wagons_wagons__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__station_station__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__map_map__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__train_train__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__wagons_wagons__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__station_station__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__map_map__ = __webpack_require__(209);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -135,13 +170,13 @@ TabsPage = __decorate([
 
 /***/ }),
 
-/***/ 198:
+/***/ 199:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrainPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_classes_train_service__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_classes_game_service__ = __webpack_require__(42);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -175,16 +210,16 @@ var TrainPage = (function () {
 }());
 TrainPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-train',template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/train/train.html"*/'<ion-header>\n	<ion-navbar>\n		<ion-title>Train <span *ngIf="train">- {{train.name}}</span></ion-title>\n		<ion-buttons end>\n	      	<button ion-button icon-only>\n	        	<ion-icon name="create"></ion-icon>\n	      	</button>\n	    </ion-buttons>\n	</ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n	<!--<ion-grid>\n		<ion-row>\n	    	<ion-col col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5>-->\n				<ion-list no-border *ngIf="train">\n\n				    <ion-list-header no-margin>\n				    	Situation\n				    </ion-list-header>\n\n				    <ion-item *ngIf="train.isMoving" (click)="goToStationPage()">\n				      <ion-icon name=\'arrow-round-forward\' item-start></ion-icon>\n				      	Currently moving to Station\n				      <ion-note item-end color="danger">\n				      	{{gameService.station.name}}\n				      </ion-note>\n				    </ion-item>\n\n				    <ion-item *ngIf="train.isMoving == false" (click)="goToStationPage()">\n				      <ion-icon name=\'pin\' item-start></ion-icon>\n				      	Station\n				      <ion-note item-end color="primary">\n				      	{{gameService.station.name}}\n				      </ion-note>\n				    </ion-item>\n\n				    <ion-list-header no-margin>\n				    	Locomotive\n				    </ion-list-header>\n\n				    <ion-item>\n				      <ion-icon name=\'train\' item-start></ion-icon>\n				      	Modele\n				      <ion-note item-end color="primary">\n				      	{{train.wagons[train.idLoco].name}}\n				      </ion-note>\n				    </ion-item>\n\n				    <ion-item>\n				      <ion-icon name=\'speedometer\' item-start></ion-icon>\n				      	Power\n				      <ion-note item-end color="primary">\n				      	{{train.power}}\n				      </ion-note>\n				    </ion-item>\n\n				    <ion-item>\n				      <ion-icon name=\'albums\' item-start></ion-icon>\n				      	Wagons Capacity\n				      <ion-note item-end color="primary">\n				      	{{train.capacity}}\n				      </ion-note>\n				    </ion-item>\n				</ion-list>\n			<!--</ion-col>\n		</ion-row>\n	</ion-grid>-->\n\n</ion-content>\n'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/train/train.html"*/
+        selector: 'page-train',template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/train/train.html"*/'<ion-header>\n	<ion-navbar>\n		<button ion-button menuToggle>\n	    	<ion-icon name="menu"></ion-icon>\n	    </button>\n		<ion-title>Train <span *ngIf="train">- {{train.name}}</span></ion-title>\n		<ion-buttons end>\n	      	<button ion-button icon-only>\n	        	<ion-icon name="create"></ion-icon>\n	      	</button>\n	    </ion-buttons>\n	</ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n	<!--<ion-grid>\n		<ion-row>\n	    	<ion-col col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5>-->\n				<ion-list no-border *ngIf="train">\n\n				    <ion-list-header no-margin>\n				    	Situation\n				    </ion-list-header>\n\n				    <ion-item *ngIf="train.isMoving" (click)="goToStationPage()">\n				      <ion-icon name=\'arrow-round-forward\' item-start></ion-icon>\n				      	Currently moving to Station\n				      <ion-note item-end color="danger">\n				      	{{gameService.station.name}}\n				      </ion-note>\n				    </ion-item>\n\n				    <ion-item *ngIf="train.isMoving == false" (click)="goToStationPage()">\n				      <ion-icon name=\'pin\' item-start></ion-icon>\n				      	Station\n				      <ion-note item-end color="primary">\n				      	{{gameService.station.name}}\n				      </ion-note>\n				    </ion-item>\n\n				    <ion-list-header no-margin>\n				    	Locomotive\n				    </ion-list-header>\n\n				    <ion-item>\n				      <ion-icon name=\'train\' item-start></ion-icon>\n				      	Modele\n				      <ion-note item-end color="primary">\n				      	{{train.wagons[train.idLoco].name}}\n				      </ion-note>\n				    </ion-item>\n\n				    <ion-item>\n				      <ion-icon name=\'speedometer\' item-start></ion-icon>\n				      	Power\n				      <ion-note item-end color="primary">\n				      	{{train.power}}\n				      </ion-note>\n				    </ion-item>\n\n				    <ion-item>\n				      <ion-icon name=\'albums\' item-start></ion-icon>\n				      	Wagons Capacity\n				      <ion-note item-end color="primary">\n				      	{{train.capacity}}\n				      </ion-note>\n				    </ion-item>\n				</ion-list>\n			<!--</ion-col>\n		</ion-row>\n	</ion-grid>-->\n\n</ion-content>\n'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/train/train.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__app_classes_game_service__["a" /* GameService */], __WEBPACK_IMPORTED_MODULE_2__app_classes_train_service__["a" /* TrainService */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__app_classes_game_service__["a" /* GameService */], __WEBPACK_IMPORTED_MODULE_2__app_classes_train_service__["a" /* TrainService */]])
 ], TrainPage);
 
 //# sourceMappingURL=train.js.map
 
 /***/ }),
 
-/***/ 199:
+/***/ 200:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -194,7 +229,7 @@ TrainPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_service__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(279);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -247,7 +282,7 @@ PlayerService = __decorate([
 
 /***/ }),
 
-/***/ 200:
+/***/ 201:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -321,7 +356,7 @@ WagonService = __decorate([
 
 /***/ }),
 
-/***/ 201:
+/***/ 202:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -382,7 +417,7 @@ ResourceService = __decorate([
 
 /***/ }),
 
-/***/ 202:
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -455,7 +490,7 @@ StationService = __decorate([
 
 /***/ }),
 
-/***/ 203:
+/***/ 204:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -524,7 +559,7 @@ StationResourceService = __decorate([
 
 /***/ }),
 
-/***/ 204:
+/***/ 205:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -599,14 +634,14 @@ SectionService = __decorate([
 
 /***/ }),
 
-/***/ 205:
+/***/ 206:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WagonsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_local_notifications__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_local_notifications__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_classes_game_service__ = __webpack_require__(42);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -655,22 +690,22 @@ var WagonsPage = (function () {
 }());
 WagonsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-wagons',template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/wagons/wagons.html"*/'<ion-header>\n	<ion-navbar>\n		<ion-title>Wagons</ion-title>\n		<ion-buttons end>\n	      	<button ion-button icon-only>\n	        	<ion-icon name="create"></ion-icon>\n	      	</button>\n	    </ion-buttons>\n	</ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n	<ion-list *ngIf="train">\n		<ion-item *ngFor="let wagon of train.wagons">\n			<ion-avatar item-start>\n				<img src="{{\'assets/img/wagon_\'+wagon.id+\'.png\'}}">\n			</ion-avatar>\n			<h2>{{wagon.name}}</h2>\n			<h3>{{wagon.content.idResource | resource | capitalize}}</h3>\n			<p>{{wagon.content.quantity}} / {{wagon.capacity}}</p>\n		</ion-item>\n	</ion-list>\n\n	<!--<button ion-button color="primary" (click)="scheduleNotification()">Toggle Notif</button>-->\n\n</ion-content>\n'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/wagons/wagons.html"*/
+        selector: 'page-wagons',template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/wagons/wagons.html"*/'<ion-header>\n	<ion-navbar>\n		<button ion-button menuToggle>\n	    	<ion-icon name="menu"></ion-icon>\n	    </button>\n		<ion-title>Wagons</ion-title>\n		<ion-buttons end>\n	      	<button ion-button icon-only>\n	        	<ion-icon name="create"></ion-icon>\n	      	</button>\n	    </ion-buttons>\n	</ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n	<ion-list *ngIf="train">\n		<ion-item *ngFor="let wagon of train.wagons">\n			<ion-avatar item-start>\n				<img src="{{\'assets/img/wagon_\'+wagon.id+\'.png\'}}">\n			</ion-avatar>\n			<h2>{{wagon.name}}</h2>\n			<h3>{{wagon.content.idResource | resource | capitalize}}</h3>\n			<p>{{wagon.content.quantity}} / {{wagon.capacity}}</p>\n		</ion-item>\n	</ion-list>\n\n	<!--<button ion-button color="primary" (click)="scheduleNotification()">Toggle Notif</button>-->\n\n</ion-content>\n'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/wagons/wagons.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_local_notifications__["a" /* LocalNotifications */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3__app_classes_game_service__["a" /* GameService */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_local_notifications__["a" /* LocalNotifications */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3__app_classes_game_service__["a" /* GameService */]])
 ], WagonsPage);
 
 //# sourceMappingURL=wagons.js.map
 
 /***/ }),
 
-/***/ 207:
+/***/ 208:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StationPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_classes_game_service__ = __webpack_require__(42);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -732,9 +767,9 @@ var StationPage = StationPage_1 = (function () {
 }());
 StationPage = StationPage_1 = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-station',template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/station/station.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Station <span *ngIf="station">- {{station.name}}</span></ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ng-container *ngIf="destStatus">\n    <ng-container *ngIf="gameService.player.trains[this.gameService.trainIndex].isMoving == false"> \n      <ion-card-content *ngIf="destStatus == \'same\'">\n        <ion-icon name=\'pin\' item-start></ion-icon>\n        This is the current station of your train\n      </ion-card-content>\n      <ion-card-content *ngIf="destStatus == \'distant\'">\n        This station is not directly connected to your current station\n      </ion-card-content>\n      <button ion-button block color="secondary" *ngIf="destStatus == \'ok\'" (click)="goToStation()">\n        Go to this station\n      </button>\n    </ng-container>\n\n    <ng-container *ngIf="gameService.player.trains[this.gameService.trainIndex].isMoving"> \n      <ion-card-content *ngIf="destStatus == \'same\'">\n        <ion-icon name=\'pin\' item-start></ion-icon>\n        your train is heading towards this station\n      </ion-card-content>\n      <ion-card-content *ngIf="destStatus == \'distant\'">\n        This station is not directly connected to the destination station\n      </ion-card-content>\n      <ion-card-content *ngIf="destStatus == \'ok\'">\n        This station will be accessible from the destination station\n      </ion-card-content>\n    </ng-container>\n  </ng-container>\n\n  <ion-list no-border *ngIf="station">\n      <ion-list-header no-margin>\n        Available resources\n      </ion-list-header>\n      <ion-item *ngFor="let res of station.resourcesSell">\n        <ion-avatar item-start>\n          <img src="{{\'assets/img/resource_\'+res.idResource+\'.png\'}}">\n        </ion-avatar>\n        <h3>{{res.idResource | resource | capitalize}}</h3>\n      </ion-item>\n\n      <ion-list-header no-margin>\n        Sought resources\n      </ion-list-header>\n      <ion-item *ngFor="let res of station.resourcesBuy">\n        <ion-avatar item-start>\n          <img src="{{\'assets/img/resource_\'+res.idResource+\'.png\'}}">\n        </ion-avatar>\n        <h3>{{res.idResource | resource | capitalize}}</h3>\n      </ion-item>\n\n      <ion-list-header no-margin>\n        Next stations\n      </ion-list-header>\n      <ng-container *ngFor="let section of station.sections"> \n        <button ion-item *ngIf="section.toStation" (click)="goToStationPage(section.toStation.id)">\n          <ion-avatar item-start>\n            <img src="assets/img/station.png">\n          </ion-avatar>\n          <h2>{{section.toStation.name}}</h2>\n          <h3>Distance: {{section.distance}}</h3>\n        </button>\n      </ng-container> \n    </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/station/station.html"*/
+        selector: 'page-station',template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/station/station.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Station <span *ngIf="station">- {{station.name}}</span></ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ng-container *ngIf="destStatus">\n    <ng-container *ngIf="gameService.player.trains[this.gameService.trainIndex].isMoving == false"> \n      <ion-card-content *ngIf="destStatus == \'same\'">\n        <ion-icon name=\'pin\' item-start></ion-icon>\n        This is the current station of your train\n      </ion-card-content>\n      <ion-card-content *ngIf="destStatus == \'distant\'">\n        This station is not directly connected to your current station\n      </ion-card-content>\n      <button ion-button block color="secondary" *ngIf="destStatus == \'ok\'" (click)="goToStation()">\n        Go to this station\n      </button>\n    </ng-container>\n\n    <ng-container *ngIf="gameService.player.trains[this.gameService.trainIndex].isMoving"> \n      <ion-card-content *ngIf="destStatus == \'same\'">\n        <ion-icon name=\'pin\' item-start></ion-icon>\n        your train is heading towards this station\n      </ion-card-content>\n      <ion-card-content *ngIf="destStatus == \'distant\'">\n        This station is not directly connected to the destination station\n      </ion-card-content>\n      <ion-card-content *ngIf="destStatus == \'ok\'">\n        This station will be accessible from the destination station\n      </ion-card-content>\n    </ng-container>\n  </ng-container>\n\n  <ion-list no-border *ngIf="station">\n      <ion-list-header no-margin>\n        Available resources\n      </ion-list-header>\n      <ion-item *ngFor="let res of station.resourcesSell">\n        <ion-avatar item-start>\n          <img src="{{\'assets/img/resource_\'+res.idResource+\'.png\'}}">\n        </ion-avatar>\n        <h3>{{res.idResource | resource | capitalize}}</h3>\n      </ion-item>\n\n      <ion-list-header no-margin>\n        Sought resources\n      </ion-list-header>\n      <ion-item *ngFor="let res of station.resourcesBuy">\n        <ion-avatar item-start>\n          <img src="{{\'assets/img/resource_\'+res.idResource+\'.png\'}}">\n        </ion-avatar>\n        <h3>{{res.idResource | resource | capitalize}}</h3>\n      </ion-item>\n\n      <ion-list-header no-margin>\n        Next stations\n      </ion-list-header>\n      <ng-container *ngFor="let section of station.sections"> \n        <button ion-item *ngIf="section.toStation" (click)="goToStationPage(section.toStation.id)">\n          <ion-avatar item-start>\n            <img src="assets/img/station.png">\n          </ion-avatar>\n          <h2>{{section.toStation.name}}</h2>\n          <h3>Distance: {{section.distance}}</h3>\n        </button>\n      </ng-container> \n    </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/station/station.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__app_classes_game_service__["a" /* GameService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__app_classes_game_service__["a" /* GameService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
 ], StationPage);
 
 var StationPage_1;
@@ -742,13 +777,13 @@ var StationPage_1;
 
 /***/ }),
 
-/***/ 208:
+/***/ 209:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MapPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -768,22 +803,22 @@ var MapPage = (function () {
 }());
 MapPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-map',template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/map/map.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Map\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  \n</ion-content>\n'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/map/map.html"*/
+        selector: 'page-map',template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/map/map.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      Map\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  \n</ion-content>\n'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/map/map.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
 ], MapPage);
 
 //# sourceMappingURL=map.js.map
 
 /***/ }),
 
-/***/ 209:
+/***/ 210:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(228);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(229);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -791,35 +826,36 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 228:
+/***/ 229:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(268);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_local_notifications__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(269);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_local_notifications__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_resource_pipe__ = __webpack_require__(283);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_capitalize_pipe__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_resource_pipe__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_capitalize_pipe__ = __webpack_require__(285);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__classes_game_service__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__classes_config_service__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__classes_player_service__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__classes_player_service__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__classes_train_service__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__classes_wagon_service__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__classes_resource_service__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__classes_station_service__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__classes_section_service__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__classes_stationResource_service__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_train_train__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_wagons_wagons__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_station_station__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_map_map__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_tabs_tabs__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_status_bar__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_splash_screen__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__classes_wagon_service__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__classes_resource_service__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__classes_station_service__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__classes_section_service__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__classes_stationResource_service__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_train_train__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_wagons_wagons__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_station_station__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_map_map__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_connexion_connexion__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_tabs_tabs__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_status_bar__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_splash_screen__ = __webpack_require__(196);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -854,6 +890,7 @@ import { InMemoryDataService }    from './in-memory-data.service';
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
@@ -869,7 +906,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_18__pages_wagons_wagons__["a" /* WagonsPage */],
             __WEBPACK_IMPORTED_MODULE_19__pages_station_station__["a" /* StationPage */],
             __WEBPACK_IMPORTED_MODULE_20__pages_map_map__["a" /* MapPage */],
-            __WEBPACK_IMPORTED_MODULE_21__pages_tabs_tabs__["a" /* TabsPage */]
+            __WEBPACK_IMPORTED_MODULE_21__pages_connexion_connexion__["a" /* ConnexionPage */],
+            __WEBPACK_IMPORTED_MODULE_22__pages_tabs_tabs__["a" /* TabsPage */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
@@ -883,11 +921,12 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_18__pages_wagons_wagons__["a" /* WagonsPage */],
             __WEBPACK_IMPORTED_MODULE_19__pages_station_station__["a" /* StationPage */],
             __WEBPACK_IMPORTED_MODULE_20__pages_map_map__["a" /* MapPage */],
-            __WEBPACK_IMPORTED_MODULE_21__pages_tabs_tabs__["a" /* TabsPage */]
+            __WEBPACK_IMPORTED_MODULE_21__pages_connexion_connexion__["a" /* ConnexionPage */],
+            __WEBPACK_IMPORTED_MODULE_22__pages_tabs_tabs__["a" /* TabsPage */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_22__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_23__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_23__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_24__ionic_native_splash_screen__["a" /* SplashScreen */],
             __WEBPACK_IMPORTED_MODULE_4__ionic_native_local_notifications__["a" /* LocalNotifications */],
             __WEBPACK_IMPORTED_MODULE_10__classes_player_service__["a" /* PlayerService */],
             __WEBPACK_IMPORTED_MODULE_11__classes_train_service__["a" /* TrainService */],
@@ -935,16 +974,17 @@ ConfigService = __decorate([
 
 /***/ }),
 
-/***/ 268:
+/***/ 269:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(194);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_connexion_connexion__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(198);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -956,39 +996,55 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+;
+
 
 
 
 var MyApp = (function () {
-    function MyApp(platform, statusBar, splashScreen) {
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_tabs_tabs__["a" /* TabsPage */];
+    function MyApp(platform, statusBar, splashScreen, menu) {
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__["a" /* TabsPage */];
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             statusBar.styleDefault();
             splashScreen.hide();
         });
+        this.pages = [
+            { title: 'Connexion', component: __WEBPACK_IMPORTED_MODULE_4__pages_connexion_connexion__["a" /* ConnexionPage */] },
+            { title: 'Play', component: __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__["a" /* TabsPage */] }
+        ];
     }
+    MyApp.prototype.openPage = function (page) {
+        // close the menu when clicking a link from the menu
+        //this.menu.close();
+        // navigate to the new page if it is not the current page
+        this.nav.setRoot(page.component);
+    };
     return MyApp;
 }());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */])
+], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/app/app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/app/app.html"*/'<ion-menu [content]="content">\n\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav [root]="rootPage" #content></ion-nav>\n'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/app/app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* MenuController */]])
 ], MyApp);
 
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
-/***/ 279:
+/***/ 280:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Player; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__train__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__train__ = __webpack_require__(281);
 
 
 var Player = (function () {
@@ -1026,14 +1082,14 @@ var Player = (function () {
 
 /***/ }),
 
-/***/ 280:
+/***/ 281:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Train; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wagon__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wagon__ = __webpack_require__(282);
 
 
 var Train = (function () {
@@ -1087,7 +1143,7 @@ var Train = (function () {
 
 /***/ }),
 
-/***/ 281:
+/***/ 282:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1119,7 +1175,7 @@ var Wagon = (function () {
 
 /***/ }),
 
-/***/ 282:
+/***/ 283:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1182,7 +1238,7 @@ var Station = (function () {
 
 /***/ }),
 
-/***/ 283:
+/***/ 284:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1218,7 +1274,7 @@ ResourcePipe = __decorate([
 
 /***/ }),
 
-/***/ 284:
+/***/ 285:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1258,15 +1314,15 @@ CapitalizePipe = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_toPromise__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_toPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__player_service__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__player_service__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__train_service__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__wagon_service__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__resource_service__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__station_service__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__stationResource_service__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__section_service__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__player__ = __webpack_require__(279);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__station__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__wagon_service__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__resource_service__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__station_service__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__stationResource_service__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__section_service__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__player__ = __webpack_require__(280);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__station__ = __webpack_require__(283);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1394,5 +1450,5 @@ GameService = __decorate([
 
 /***/ })
 
-},[209]);
+},[210]);
 //# sourceMappingURL=main.js.map
