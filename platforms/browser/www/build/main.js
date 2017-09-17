@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 103:
+/***/ 105:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -66,77 +66,16 @@ TrainService = __decorate([
 
 /***/ }),
 
-/***/ 112:
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 112;
-
-/***/ }),
-
-/***/ 154:
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 154;
-
-/***/ }),
-
-/***/ 197:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConnexionPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var ConnexionPage = (function () {
-    function ConnexionPage(navCtrl) {
-        this.navCtrl = navCtrl;
-    }
-    return ConnexionPage;
-}());
-ConnexionPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-connexion',template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/connexion/connexion.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Hello Ionic</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <ion-item>\n      <ion-label floating>Username</ion-label>\n      <ion-input type="text"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Password</ion-label>\n      <ion-input type="password"></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  <button ion-button color="primary">Connexion (WIP)</button>\n\n</ion-content>'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/connexion/connexion.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
-], ConnexionPage);
-
-//# sourceMappingURL=connexion.js.map
-
-/***/ }),
-
-/***/ 198:
+/***/ 106:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__train_train__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__wagons_wagons__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__station_station__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__map_map__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__train_train__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__wagons_wagons__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__station_station__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__map_map__ = __webpack_require__(210);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -170,56 +109,33 @@ TabsPage = __decorate([
 
 /***/ }),
 
-/***/ 199:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 114:
+/***/ (function(module, exports) {
 
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrainPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_classes_train_service__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_classes_game_service__ = __webpack_require__(42);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var TrainPage = (function () {
-    function TrainPage(navCtrl, gameService, trainService) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.gameService = gameService;
-        this.trainService = trainService;
-        this.gameService.isDataReady().then(function (promise) {
-            _this.train = _this.gameService.player.trains[_this.gameService.trainIndex];
-        });
-    }
-    TrainPage.prototype.goToStationPage = function (idStation) {
-        //this.navCtrl.push(StationPage);
-        this.navCtrl.parent.select(2);
-    };
-    return TrainPage;
-}());
-TrainPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-train',template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/train/train.html"*/'<ion-header>\n	<ion-navbar>\n		<button ion-button menuToggle>\n	    	<ion-icon name="menu"></ion-icon>\n	    </button>\n		<ion-title>Train <span *ngIf="train">- {{train.name}}</span></ion-title>\n		<ion-buttons end>\n	      	<button ion-button icon-only>\n	        	<ion-icon name="create"></ion-icon>\n	      	</button>\n	    </ion-buttons>\n	</ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n	<!--<ion-grid>\n		<ion-row>\n	    	<ion-col col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5>-->\n				<ion-list no-border *ngIf="train">\n\n				    <ion-list-header no-margin>\n				    	Situation\n				    </ion-list-header>\n\n				    <ion-item *ngIf="train.isMoving" (click)="goToStationPage()">\n				      <ion-icon name=\'arrow-round-forward\' item-start></ion-icon>\n				      	Currently moving to Station\n				      <ion-note item-end color="danger">\n				      	{{gameService.station.name}}\n				      </ion-note>\n				    </ion-item>\n\n				    <ion-item *ngIf="train.isMoving == false" (click)="goToStationPage()">\n				      <ion-icon name=\'pin\' item-start></ion-icon>\n				      	Station\n				      <ion-note item-end color="primary">\n				      	{{gameService.station.name}}\n				      </ion-note>\n				    </ion-item>\n\n				    <ion-list-header no-margin>\n				    	Locomotive\n				    </ion-list-header>\n\n				    <ion-item>\n				      <ion-icon name=\'train\' item-start></ion-icon>\n				      	Modele\n				      <ion-note item-end color="primary">\n				      	{{train.wagons[train.idLoco].name}}\n				      </ion-note>\n				    </ion-item>\n\n				    <ion-item>\n				      <ion-icon name=\'speedometer\' item-start></ion-icon>\n				      	Power\n				      <ion-note item-end color="primary">\n				      	{{train.power}}\n				      </ion-note>\n				    </ion-item>\n\n				    <ion-item>\n				      <ion-icon name=\'albums\' item-start></ion-icon>\n				      	Wagons Capacity\n				      <ion-note item-end color="primary">\n				      	{{train.capacity}}\n				      </ion-note>\n				    </ion-item>\n				</ion-list>\n			<!--</ion-col>\n		</ion-row>\n	</ion-grid>-->\n\n</ion-content>\n'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/train/train.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__app_classes_game_service__["a" /* GameService */], __WEBPACK_IMPORTED_MODULE_2__app_classes_train_service__["a" /* TrainService */]])
-], TrainPage);
-
-//# sourceMappingURL=train.js.map
+function webpackEmptyAsyncContext(req) {
+	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 114;
 
 /***/ }),
 
-/***/ 200:
+/***/ 156:
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 156;
+
+/***/ }),
+
+/***/ 199:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -229,7 +145,7 @@ TrainPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config_service__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(279);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(283);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -267,6 +183,13 @@ var PlayerService = (function () {
         })
             .catch(this.handleError);
     };
+    PlayerService.prototype.getByLogin = function (login, password) {
+        var url = this.apiUrl + "?filter[]=name,eq," + login + "&filter[]=password,eq," + password + "&transform=1";
+        return this.http.get(url)
+            .toPromise()
+            .then(function (response) { return response.json().players; })
+            .catch(this.handleError);
+    };
     PlayerService.prototype.handleError = function (error) {
         console.error('An error occurred', error);
         return Promise.reject(error.message || error);
@@ -282,7 +205,7 @@ PlayerService = __decorate([
 
 /***/ }),
 
-/***/ 201:
+/***/ 200:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -356,7 +279,7 @@ WagonService = __decorate([
 
 /***/ }),
 
-/***/ 202:
+/***/ 201:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -417,7 +340,7 @@ ResourceService = __decorate([
 
 /***/ }),
 
-/***/ 203:
+/***/ 202:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -490,7 +413,7 @@ StationService = __decorate([
 
 /***/ }),
 
-/***/ 204:
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -559,7 +482,7 @@ StationResourceService = __decorate([
 
 /***/ }),
 
-/***/ 205:
+/***/ 204:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -634,15 +557,122 @@ SectionService = __decorate([
 
 /***/ }),
 
+/***/ 205:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConnexionPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_classes_game_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs_tabs__ = __webpack_require__(106);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var ConnexionPage = (function () {
+    function ConnexionPage(navCtrl, gameService, navParams, toastCtrl) {
+        this.navCtrl = navCtrl;
+        this.gameService = gameService;
+        this.navParams = navParams;
+        this.toastCtrl = toastCtrl;
+    }
+    ConnexionPage.prototype.submitLogin = function () {
+        var _this = this;
+        this.gameService.connexion(this.login, this.password).then(function (status) {
+            if (status) {
+                _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__tabs_tabs__["a" /* TabsPage */]);
+            }
+            else {
+                var toast = _this.toastCtrl.create({
+                    message: 'Login is invalid',
+                    duration: 3000,
+                    position: 'top'
+                });
+                toast.present();
+            }
+        });
+    };
+    return ConnexionPage;
+}());
+ConnexionPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-connexion',template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/connexion/connexion.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Connexion</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <ng-container *ngIf="gameService.connexionFormRequired"> \n\n  <ion-list>\n\n    <ion-item>\n      <ion-label floating>Username</ion-label>\n      <ion-input type="text" [(ngModel)]="login"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Password</ion-label>\n      <ion-input type="password" [(ngModel)]="password"></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  <button ion-button color="primary" block (click)="submitLogin()">Connexion</button>\n\n</ng-container>\n\n</ion-content>'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/connexion/connexion.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__app_classes_game_service__["a" /* GameService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]])
+], ConnexionPage);
+
+//# sourceMappingURL=connexion.js.map
+
+/***/ }),
+
 /***/ 206:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TrainPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_classes_train_service__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_classes_game_service__ = __webpack_require__(32);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var TrainPage = (function () {
+    function TrainPage(navCtrl, gameService, trainService) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.gameService = gameService;
+        this.trainService = trainService;
+        this.gameService.isDataReady().then(function (promise) {
+            _this.train = _this.gameService.player.trains[_this.gameService.trainIndex];
+        });
+    }
+    TrainPage.prototype.goToStationPage = function (idStation) {
+        //this.navCtrl.push(StationPage);
+        this.navCtrl.parent.select(2);
+    };
+    return TrainPage;
+}());
+TrainPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-train',template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/train/train.html"*/'<ion-header>\n	<ion-navbar>\n		<button ion-button menuToggle>\n	    	<ion-icon name="menu"></ion-icon>\n	    </button>\n		<ion-title>Train <span *ngIf="train">- {{train.name}}</span></ion-title>\n		<ion-buttons end>\n	      	<button ion-button icon-only>\n	        	<ion-icon name="create"></ion-icon>\n	      	</button>\n	    </ion-buttons>\n	</ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n	<!--<ion-grid>\n		<ion-row>\n	    	<ion-col col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5>-->\n				<ion-list no-border *ngIf="train">\n\n				    <ion-list-header no-margin>\n				    	Situation\n				    </ion-list-header>\n\n				    <ion-item *ngIf="train.isMoving" (click)="goToStationPage()">\n				      <ion-icon name=\'arrow-round-forward\' item-start></ion-icon>\n				      	Currently moving to Station\n				      <ion-note item-end color="danger">\n				      	{{gameService.station.name}}\n				      </ion-note>\n				    </ion-item>\n\n				    <ion-item *ngIf="train.isMoving == false" (click)="goToStationPage()">\n				      <ion-icon name=\'pin\' item-start></ion-icon>\n				      	Station\n				      <ion-note item-end color="primary">\n				      	{{gameService.station.name}}\n				      </ion-note>\n				    </ion-item>\n\n				    <ion-list-header no-margin>\n				    	Locomotive\n				    </ion-list-header>\n\n				    <ion-item>\n				      <ion-icon name=\'train\' item-start></ion-icon>\n				      	Modele\n				      <ion-note item-end color="primary">\n				      	{{train.wagons[train.idLoco].name}}\n				      </ion-note>\n				    </ion-item>\n\n				    <ion-item>\n				      <ion-icon name=\'speedometer\' item-start></ion-icon>\n				      	Power\n				      <ion-note item-end color="primary">\n				      	{{train.power}}\n				      </ion-note>\n				    </ion-item>\n\n				    <ion-item>\n				      <ion-icon name=\'albums\' item-start></ion-icon>\n				      	Wagons Capacity\n				      <ion-note item-end color="primary">\n				      	{{train.capacity}}\n				      </ion-note>\n				    </ion-item>\n				</ion-list>\n			<!--</ion-col>\n		</ion-row>\n	</ion-grid>-->\n\n</ion-content>\n'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/train/train.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__app_classes_game_service__["a" /* GameService */], __WEBPACK_IMPORTED_MODULE_2__app_classes_train_service__["a" /* TrainService */]])
+], TrainPage);
+
+//# sourceMappingURL=train.js.map
+
+/***/ }),
+
+/***/ 207:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WagonsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_local_notifications__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_classes_game_service__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_local_notifications__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_classes_game_service__ = __webpack_require__(32);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -699,14 +729,14 @@ WagonsPage = __decorate([
 
 /***/ }),
 
-/***/ 208:
+/***/ 209:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StationPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_classes_game_service__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_classes_game_service__ = __webpack_require__(32);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -777,7 +807,7 @@ var StationPage_1;
 
 /***/ }),
 
-/***/ 209:
+/***/ 210:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -812,13 +842,13 @@ MapPage = __decorate([
 
 /***/ }),
 
-/***/ 210:
+/***/ 211:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(230);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -826,7 +856,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 229:
+/***/ 230:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -834,34 +864,36 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(269);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_local_notifications__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(270);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_local_notifications__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils_resource_pipe__ = __webpack_require__(284);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_capitalize_pipe__ = __webpack_require__(285);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__classes_game_service__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__classes_config_service__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__classes_player_service__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__classes_train_service__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__classes_wagon_service__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__classes_resource_service__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__classes_station_service__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__classes_section_service__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__classes_stationResource_service__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_train_train__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_wagons_wagons__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_station_station__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_map_map__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_connexion_connexion__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_tabs_tabs__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_status_bar__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_splash_screen__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils_resource_pipe__ = __webpack_require__(288);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils_capitalize_pipe__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__classes_game_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__classes_config_service__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__classes_player_service__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__classes_train_service__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__classes_wagon_service__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__classes_resource_service__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__classes_station_service__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__classes_section_service__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__classes_stationResource_service__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_train_train__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_wagons_wagons__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_station_station__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_map_map__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_connexion_connexion__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_tabs_tabs__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_status_bar__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_splash_screen__ = __webpack_require__(198);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -900,43 +932,44 @@ AppModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["L" /* NgModule */])({
         declarations: [
             __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
-            __WEBPACK_IMPORTED_MODULE_6__utils_resource_pipe__["a" /* ResourcePipe */],
-            __WEBPACK_IMPORTED_MODULE_7__utils_capitalize_pipe__["a" /* CapitalizePipe */],
-            __WEBPACK_IMPORTED_MODULE_17__pages_train_train__["a" /* TrainPage */],
-            __WEBPACK_IMPORTED_MODULE_18__pages_wagons_wagons__["a" /* WagonsPage */],
-            __WEBPACK_IMPORTED_MODULE_19__pages_station_station__["a" /* StationPage */],
-            __WEBPACK_IMPORTED_MODULE_20__pages_map_map__["a" /* MapPage */],
-            __WEBPACK_IMPORTED_MODULE_21__pages_connexion_connexion__["a" /* ConnexionPage */],
-            __WEBPACK_IMPORTED_MODULE_22__pages_tabs_tabs__["a" /* TabsPage */]
+            __WEBPACK_IMPORTED_MODULE_7__utils_resource_pipe__["a" /* ResourcePipe */],
+            __WEBPACK_IMPORTED_MODULE_8__utils_capitalize_pipe__["a" /* CapitalizePipe */],
+            __WEBPACK_IMPORTED_MODULE_18__pages_train_train__["a" /* TrainPage */],
+            __WEBPACK_IMPORTED_MODULE_19__pages_wagons_wagons__["a" /* WagonsPage */],
+            __WEBPACK_IMPORTED_MODULE_20__pages_station_station__["a" /* StationPage */],
+            __WEBPACK_IMPORTED_MODULE_21__pages_map_map__["a" /* MapPage */],
+            __WEBPACK_IMPORTED_MODULE_22__pages_connexion_connexion__["a" /* ConnexionPage */],
+            __WEBPACK_IMPORTED_MODULE_23__pages_tabs_tabs__["a" /* TabsPage */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_5__angular_http__["c" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */])
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */]),
+            __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["a" /* IonicStorageModule */].forRoot()
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
         entryComponents: [
             __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
-            __WEBPACK_IMPORTED_MODULE_17__pages_train_train__["a" /* TrainPage */],
-            __WEBPACK_IMPORTED_MODULE_18__pages_wagons_wagons__["a" /* WagonsPage */],
-            __WEBPACK_IMPORTED_MODULE_19__pages_station_station__["a" /* StationPage */],
-            __WEBPACK_IMPORTED_MODULE_20__pages_map_map__["a" /* MapPage */],
-            __WEBPACK_IMPORTED_MODULE_21__pages_connexion_connexion__["a" /* ConnexionPage */],
-            __WEBPACK_IMPORTED_MODULE_22__pages_tabs_tabs__["a" /* TabsPage */]
+            __WEBPACK_IMPORTED_MODULE_18__pages_train_train__["a" /* TrainPage */],
+            __WEBPACK_IMPORTED_MODULE_19__pages_wagons_wagons__["a" /* WagonsPage */],
+            __WEBPACK_IMPORTED_MODULE_20__pages_station_station__["a" /* StationPage */],
+            __WEBPACK_IMPORTED_MODULE_21__pages_map_map__["a" /* MapPage */],
+            __WEBPACK_IMPORTED_MODULE_22__pages_connexion_connexion__["a" /* ConnexionPage */],
+            __WEBPACK_IMPORTED_MODULE_23__pages_tabs_tabs__["a" /* TabsPage */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_23__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_24__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_24__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_25__ionic_native_splash_screen__["a" /* SplashScreen */],
             __WEBPACK_IMPORTED_MODULE_4__ionic_native_local_notifications__["a" /* LocalNotifications */],
-            __WEBPACK_IMPORTED_MODULE_10__classes_player_service__["a" /* PlayerService */],
-            __WEBPACK_IMPORTED_MODULE_11__classes_train_service__["a" /* TrainService */],
-            __WEBPACK_IMPORTED_MODULE_12__classes_wagon_service__["a" /* WagonService */],
-            __WEBPACK_IMPORTED_MODULE_13__classes_resource_service__["a" /* ResourceService */],
-            __WEBPACK_IMPORTED_MODULE_14__classes_station_service__["a" /* StationService */],
-            __WEBPACK_IMPORTED_MODULE_15__classes_section_service__["a" /* SectionService */],
-            __WEBPACK_IMPORTED_MODULE_16__classes_stationResource_service__["a" /* StationResourceService */],
-            __WEBPACK_IMPORTED_MODULE_8__classes_game_service__["a" /* GameService */],
-            __WEBPACK_IMPORTED_MODULE_9__classes_config_service__["a" /* ConfigService */],
+            __WEBPACK_IMPORTED_MODULE_11__classes_player_service__["a" /* PlayerService */],
+            __WEBPACK_IMPORTED_MODULE_12__classes_train_service__["a" /* TrainService */],
+            __WEBPACK_IMPORTED_MODULE_13__classes_wagon_service__["a" /* WagonService */],
+            __WEBPACK_IMPORTED_MODULE_14__classes_resource_service__["a" /* ResourceService */],
+            __WEBPACK_IMPORTED_MODULE_15__classes_station_service__["a" /* StationService */],
+            __WEBPACK_IMPORTED_MODULE_16__classes_section_service__["a" /* SectionService */],
+            __WEBPACK_IMPORTED_MODULE_17__classes_stationResource_service__["a" /* StationResourceService */],
+            __WEBPACK_IMPORTED_MODULE_9__classes_game_service__["a" /* GameService */],
+            __WEBPACK_IMPORTED_MODULE_10__classes_config_service__["a" /* ConfigService */],
             { provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] }
         ]
     })
@@ -974,17 +1007,19 @@ ConfigService = __decorate([
 
 /***/ }),
 
-/***/ 269:
+/***/ 270:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_connexion_connexion__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__classes_game_service__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_connexion_connexion__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__ = __webpack_require__(106);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1001,23 +1036,42 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var MyApp = (function () {
-    function MyApp(platform, statusBar, splashScreen, menu) {
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__["a" /* TabsPage */];
+    function MyApp(platform, statusBar, splashScreen, menu, storage, gameService) {
+        var _this = this;
+        this.menu = menu;
+        this.storage = storage;
+        this.gameService = gameService;
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_6__pages_connexion_connexion__["a" /* ConnexionPage */];
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             statusBar.styleDefault();
-            splashScreen.hide();
+            //this.storage.clear(); //To reset storage for testing purpose
+            _this.storage.get('idPlayer').then(function (val) {
+                if (val == null) {
+                    _this.gameService.connexionFormRequired = true;
+                    splashScreen.hide();
+                }
+                else {
+                    _this.nav.push(__WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__["a" /* TabsPage */]);
+                    _this.gameService.setIdPlayer(val).then(function (promise) {
+                        _this.gameService.connexionFormRequired = true;
+                        splashScreen.hide();
+                    });
+                }
+            });
         });
         this.pages = [
-            { title: 'Connexion', component: __WEBPACK_IMPORTED_MODULE_4__pages_connexion_connexion__["a" /* ConnexionPage */] },
-            { title: 'Play', component: __WEBPACK_IMPORTED_MODULE_5__pages_tabs_tabs__["a" /* TabsPage */] }
+            { title: 'Connexion', component: __WEBPACK_IMPORTED_MODULE_6__pages_connexion_connexion__["a" /* ConnexionPage */] },
+            { title: 'Play', component: __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__["a" /* TabsPage */] }
         ];
     }
     MyApp.prototype.openPage = function (page) {
         // close the menu when clicking a link from the menu
-        //this.menu.close();
+        this.menu.close();
         // navigate to the new page if it is not the current page
         this.nav.setRoot(page.component);
     };
@@ -1028,23 +1082,23 @@ __decorate([
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */])
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/app/app.html"*/'<ion-menu [content]="content">\n\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav [root]="rootPage" #content></ion-nav>\n'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/app/app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/app/app.html"*/'<ion-menu [content]="content" *ngIf="gameService.menuReady">\n\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav [root]="rootPage" #content></ion-nav>\n'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/app/app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* MenuController */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* MenuController */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_5__classes_game_service__["a" /* GameService */]])
 ], MyApp);
 
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
-/***/ 280:
+/***/ 284:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Player; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__train__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__train__ = __webpack_require__(285);
 
 
 var Player = (function () {
@@ -1082,14 +1136,14 @@ var Player = (function () {
 
 /***/ }),
 
-/***/ 281:
+/***/ 285:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Train; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_toPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wagon__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wagon__ = __webpack_require__(286);
 
 
 var Train = (function () {
@@ -1143,7 +1197,7 @@ var Train = (function () {
 
 /***/ }),
 
-/***/ 282:
+/***/ 286:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1175,7 +1229,7 @@ var Wagon = (function () {
 
 /***/ }),
 
-/***/ 283:
+/***/ 287:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1238,13 +1292,13 @@ var Station = (function () {
 
 /***/ }),
 
-/***/ 284:
+/***/ 288:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResourcePipe; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__classes_game_service__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__classes_game_service__ = __webpack_require__(32);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1274,7 +1328,7 @@ ResourcePipe = __decorate([
 
 /***/ }),
 
-/***/ 285:
+/***/ 289:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1306,23 +1360,24 @@ CapitalizePipe = __decorate([
 
 /***/ }),
 
-/***/ 42:
+/***/ 32:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GameService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_toPromise__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_toPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__player_service__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__train_service__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__wagon_service__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__resource_service__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__station_service__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__stationResource_service__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__section_service__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__player__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__station__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_toPromise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__player_service__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__train_service__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__wagon_service__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__resource_service__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__station_service__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__stationResource_service__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__section_service__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__player__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__station__ = __webpack_require__(287);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1343,8 +1398,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var GameService = (function () {
-    function GameService(playerService, trainService, wagonService, resourceService, stationService, stationResourceService, sectionService) {
+    function GameService(playerService, trainService, wagonService, resourceService, stationService, stationResourceService, sectionService, storage) {
         this.playerService = playerService;
         this.trainService = trainService;
         this.wagonService = wagonService;
@@ -1352,10 +1408,13 @@ var GameService = (function () {
         this.stationService = stationService;
         this.stationResourceService = stationResourceService;
         this.sectionService = sectionService;
-        this.playerId = 0;
+        this.storage = storage;
+        this.playerId = -1;
         this.trainIndex = 0;
         this.dataReady = false;
         this.dataLoading = false;
+        this.connexionFormRequired = false;
+        this.menuReady = false;
         this.services = { playerService: playerService, trainService: trainService, wagonService: wagonService, resourceService: resourceService };
     }
     GameService.prototype.refreshData = function () {
@@ -1365,11 +1424,11 @@ var GameService = (function () {
             _this.resources = promise;
             //console.log(this.resources);
             //Populuate player (with train and wagons)
-            _this.player = new __WEBPACK_IMPORTED_MODULE_9__player__["a" /* Player */](_this.services);
+            _this.player = new __WEBPACK_IMPORTED_MODULE_10__player__["a" /* Player */](_this.services);
             return _this.player.populate(_this.playerId).then(function (promise) {
                 console.log(_this.player);
                 _this.updateStatus(0);
-                _this.station = new __WEBPACK_IMPORTED_MODULE_10__station__["a" /* Station */](_this.stationService, _this.stationResourceService, _this.sectionService);
+                _this.station = new __WEBPACK_IMPORTED_MODULE_11__station__["a" /* Station */](_this.stationService, _this.stationResourceService, _this.sectionService);
                 return _this.station.populate(_this.player.trains[_this.trainIndex].idStation).then(function (promise) {
                     //console.log(this.station.resourcesSell);
                     _this.dataReady = true;
@@ -1393,7 +1452,7 @@ var GameService = (function () {
             }
         }
         else {
-            //console.log("data already fetched");
+            console.log("data already fetched");
             return Promise.resolve();
         }
     };
@@ -1411,7 +1470,7 @@ var GameService = (function () {
         }, 500);
     };
     GameService.prototype.getStationById = function (id) {
-        var station = new __WEBPACK_IMPORTED_MODULE_10__station__["a" /* Station */](this.stationService, this.stationResourceService, this.sectionService);
+        var station = new __WEBPACK_IMPORTED_MODULE_11__station__["a" /* Station */](this.stationService, this.stationResourceService, this.sectionService);
         return station.populate(id).then(function (promise) {
             return station;
         });
@@ -1439,16 +1498,50 @@ var GameService = (function () {
             }
         }, delay);
     };
+    GameService.prototype.connexion = function (login, password) {
+        var _this = this;
+        return this.playerService.getByLogin(login, password).then(function (players) {
+            if (players.length > 0) {
+                //this.player = players[0];
+                _this.playerId = players[0].id;
+                _this.storage.set('idPlayer', _this.playerId);
+                _this.dataReady = false;
+                return _this.isDataReady().then(function (promise) {
+                    _this.menuReady = true;
+                    return 1;
+                });
+            }
+            else {
+                return 0;
+            }
+        });
+    };
+    GameService.prototype.setIdPlayer = function (id) {
+        var _this = this;
+        this.playerId = id;
+        this.dataReady = false;
+        return this.isDataReady().then(function (promise) {
+            _this.menuReady = true;
+            return 1;
+        });
+    };
     return GameService;
 }());
 GameService = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__player_service__["a" /* PlayerService */], __WEBPACK_IMPORTED_MODULE_3__train_service__["a" /* TrainService */], __WEBPACK_IMPORTED_MODULE_4__wagon_service__["a" /* WagonService */], __WEBPACK_IMPORTED_MODULE_5__resource_service__["a" /* ResourceService */], __WEBPACK_IMPORTED_MODULE_6__station_service__["a" /* StationService */], __WEBPACK_IMPORTED_MODULE_7__stationResource_service__["a" /* StationResourceService */], __WEBPACK_IMPORTED_MODULE_8__section_service__["a" /* SectionService */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__player_service__["a" /* PlayerService */],
+        __WEBPACK_IMPORTED_MODULE_4__train_service__["a" /* TrainService */],
+        __WEBPACK_IMPORTED_MODULE_5__wagon_service__["a" /* WagonService */],
+        __WEBPACK_IMPORTED_MODULE_6__resource_service__["a" /* ResourceService */],
+        __WEBPACK_IMPORTED_MODULE_7__station_service__["a" /* StationService */],
+        __WEBPACK_IMPORTED_MODULE_8__stationResource_service__["a" /* StationResourceService */],
+        __WEBPACK_IMPORTED_MODULE_9__section_service__["a" /* SectionService */],
+        __WEBPACK_IMPORTED_MODULE_1__ionic_storage__["b" /* Storage */]])
 ], GameService);
 
 //# sourceMappingURL=game.service.js.map
 
 /***/ })
 
-},[210]);
+},[211]);
 //# sourceMappingURL=main.js.map

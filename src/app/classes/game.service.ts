@@ -1,4 +1,5 @@
 import { Injectable }    from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -17,7 +18,7 @@ import { Section } from './section';
 
 @Injectable()
 export class GameService {
-	playerId = 1;
+	playerId = -1;
 	trainIndex = 0;
 	player: Player;
 	resources: Resource[];
@@ -26,7 +27,18 @@ export class GameService {
   	dataReady:boolean = false;
   	dataLoading: boolean = false;
 
-	constructor(private playerService: PlayerService, private trainService: TrainService, private wagonService: WagonService, private resourceService: ResourceService, private stationService: StationService, private stationResourceService: StationResourceService, private sectionService: SectionService) {
+  	public connexionFormRequired: boolean = false;
+  	public menuReady: boolean = false;
+
+	constructor(
+		private playerService: PlayerService, 
+		private trainService: TrainService, 
+		private wagonService: WagonService, 
+		private resourceService: ResourceService, 
+		private stationService: StationService, 
+		private stationResourceService: StationResourceService, 
+		private sectionService: SectionService,
+		private storage: Storage) {
 
 		this.services = {playerService, trainService, wagonService, resourceService};
 	}
@@ -122,14 +134,27 @@ export class GameService {
 			if(players.length > 0){
 				//this.player = players[0];
 				this.playerId = players[0].id;
+				this.storage.set('idPlayer', this.playerId);
+
 				this.dataReady = false;
 
 				return this.isDataReady().then((promise) => {
+					this.menuReady = true;
 					return 1;
 				});
 			}else{
 				return 0;
 			}
+		});
+	}
+
+	setIdPlayer(id:number): Promise<number>{
+		this.playerId = id;
+		this.dataReady = false;
+
+		return this.isDataReady().then((promise) => {
+			this.menuReady = true;
+			return 1;
 		});
 	}
 }

@@ -3,12 +3,14 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Hello Ionic</ion-title>
+    <ion-title>Connexion</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
+
+  <ng-container *ngIf="gameService.connexionFormRequired"> 
 
   <ion-list>
 
@@ -24,6 +26,8 @@
 
   </ion-list>
 
-  <button ion-button color="primary" (click)="submitLogin()">Connexion</button>
+  <button ion-button color="primary" block (click)="submitLogin()">Connexion</button>
+
+</ng-container>
 
 </ion-content>
