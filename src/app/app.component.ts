@@ -12,10 +12,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage:any = TabsPage;
+  rootPage:any = ConnexionPage;
   pages: Array<{title: string, component: any}>;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, menu: MenuController) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public menu: MenuController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -31,7 +31,7 @@ export class MyApp {
 
   openPage(page) {
     // close the menu when clicking a link from the menu
-    //this.menu.close();
+    this.menu.close();
     // navigate to the new page if it is not the current page
     this.nav.setRoot(page.component);
   }

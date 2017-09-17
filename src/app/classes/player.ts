@@ -6,6 +6,7 @@ import { Train } from './train';
 export class Player {
 	id: number;
   	name: string;
+  	password: string;
   	idTrains: number;
   	idTrainsArray: number[];
   	trains: Train[];

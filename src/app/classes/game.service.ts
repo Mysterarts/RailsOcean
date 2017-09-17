@@ -17,7 +17,7 @@ import { Section } from './section';
 
 @Injectable()
 export class GameService {
-	playerId = 0;
+	playerId = 1;
 	trainIndex = 0;
 	player: Player;
 	resources: Resource[];
@@ -67,7 +67,7 @@ export class GameService {
 				});
 			}
 		}else{
-			//console.log("data already fetched");
+			console.log("data already fetched");
 			return Promise.resolve();
 		}
 	}
@@ -115,6 +115,22 @@ export class GameService {
             }
         }
 	    ,delay);
+	}
+
+	connexion(login:string, password:string): Promise<number>{
+		return this.playerService.getByLogin(login, password).then((players) => {
+			if(players.length > 0){
+				//this.player = players[0];
+				this.playerId = players[0].id;
+				this.dataReady = false;
+
+				return this.isDataReady().then((promise) => {
+					return 1;
+				});
+			}else{
+				return 0;
+			}
+		});
 	}
 }
 

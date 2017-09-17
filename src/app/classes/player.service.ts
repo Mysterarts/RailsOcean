@@ -32,6 +32,14 @@ export class PlayerService {
 	    		   	return response.json() as Player})
 	    		   .catch(this.handleError);
 	}
+
+	getByLogin(login: string, password: string): Promise<any[]> {
+	  const url = `${this.apiUrl}?filter[]=name,eq,${login}&filter[]=password,eq,${password}&transform=1`;
+	  return this.http.get(url)
+	             .toPromise()
+	             .then(response => response.json().players as Player[])
+	             .catch(this.handleError);
+	}
     
 
 	private handleError(error: any): Promise<any> {
