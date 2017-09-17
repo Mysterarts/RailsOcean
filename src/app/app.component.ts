@@ -42,7 +42,7 @@ export class MyApp {
     });
 
     this.pages = [
-      { title: 'Connexion', component: ConnexionPage },
+      { title: 'Change user', component: ConnexionPage },
       { title: 'Play', component: TabsPage }
     ];
   }

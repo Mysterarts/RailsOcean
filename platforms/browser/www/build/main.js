@@ -606,7 +606,7 @@ var ConnexionPage = (function () {
 }());
 ConnexionPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-connexion',template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/connexion/connexion.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Connexion</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <ng-container *ngIf="gameService.connexionFormRequired"> \n\n  <ion-list>\n\n    <ion-item>\n      <ion-label floating>Username</ion-label>\n      <ion-input type="text" [(ngModel)]="login"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Password</ion-label>\n      <ion-input type="password" [(ngModel)]="password"></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  <button ion-button color="primary" block (click)="submitLogin()">Connexion</button>\n\n</ng-container>\n\n</ion-content>'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/connexion/connexion.html"*/
+        selector: 'page-connexion',template:/*ion-inline-start:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/connexion/connexion.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Login</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n  <ng-container *ngIf="gameService.connexionFormRequired"> \n\n  <ion-list>\n\n    <ion-item>\n      <ion-label floating>Username</ion-label>\n      <ion-input type="text" [(ngModel)]="login"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Password</ion-label>\n      <ion-input type="password" [(ngModel)]="password"></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  <button ion-button color="primary" block (click)="submitLogin()">Login</button>\n\n</ng-container>\n\n</ion-content>'/*ion-inline-end:"/Users/Arthur/Documents/Projets/Jeux/RailsOcean/src/pages/connexion/connexion.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__app_classes_game_service__["a" /* GameService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]])
 ], ConnexionPage);
@@ -1065,7 +1065,7 @@ var MyApp = (function () {
             });
         });
         this.pages = [
-            { title: 'Connexion', component: __WEBPACK_IMPORTED_MODULE_6__pages_connexion_connexion__["a" /* ConnexionPage */] },
+            { title: 'Change user', component: __WEBPACK_IMPORTED_MODULE_6__pages_connexion_connexion__["a" /* ConnexionPage */] },
             { title: 'Play', component: __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__["a" /* TabsPage */] }
         ];
     }
