@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Parameters</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ng-container *ngIf="gameService.player"> 
+
+    <ion-list>
+
+    <ion-item>
+      <ion-label>Speed x100</ion-label>
+      <ion-toggle [(ngModel)]="gameService.player.cheatSpeed"></ion-toggle>
+    </ion-item>
+
+    </ion-list>
+
+    <button ion-button color="primary" block (click)="submitParam()">Save</button>
+
+  </ng-container>
+
+</ion-content>

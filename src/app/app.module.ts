@@ -4,7 +4,8 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { LocalNotifications }     from '@ionic-native/local-notifications';
 import { HttpModule }             from '@angular/http';
-import { IonicStorageModule } from '@ionic/storage';
+import { IonicStorageModule }     from '@ionic/storage';
+import { MomentModule }           from 'angular2-moment';
 /*
 import { InMemoryWebApiModule }   from 'angular-in-memory-web-api';
 import { InMemoryDataService }    from './in-memory-data.service';
@@ -27,6 +28,7 @@ import { WagonsPage }             from '../pages/wagons/wagons';
 import { StationPage }            from '../pages/station/station';
 import { MapPage }                from '../pages/map/map';
 import { ConnexionPage }          from '../pages/connexion/connexion';
+import { ParametersPage }         from '../pages/parameters/parameters';
 import { TabsPage }               from '../pages/tabs/tabs';
 
 import { StatusBar }              from '@ionic-native/status-bar';
@@ -43,11 +45,13 @@ import { SplashScreen }           from '@ionic-native/splash-screen';
     StationPage,
     MapPage,
     ConnexionPage,
+    ParametersPage,
     TabsPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    MomentModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
@@ -59,6 +63,7 @@ import { SplashScreen }           from '@ionic-native/splash-screen';
     StationPage,
     MapPage,
     ConnexionPage,
+    ParametersPage,
     TabsPage
   ],
   providers: [

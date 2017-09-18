@@ -1,5 +1,6 @@
 import { Injectable }    from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { ToastController } from 'ionic-angular';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -38,7 +39,8 @@ export class GameService {
 		private stationService: StationService, 
 		private stationResourceService: StationResourceService, 
 		private sectionService: SectionService,
-		private storage: Storage) {
+		private storage: Storage,
+		private toastCtrl: ToastController) {
 
 		this.services = {playerService, trainService, wagonService, resourceService};
 	}
@@ -54,11 +56,12 @@ export class GameService {
 			this.player = new Player(this.services);
 			return this.player.populate(this.playerId).then((promise) => {
 				console.log(this.player);
-				this.updateStatus(0);
+				//this.updateStatus(0);
 
 				this.station = new Station(this.stationService, this.stationResourceService, this.sectionService);
 				return this.station.populate(this.player.trains[this.trainIndex].idStation).then((promise) => {
 					//console.log(this.station.resourcesSell);
+					this.updateStatus(0);
 					this.dataReady = true;
 					this.dataLoading = false;
 					//this.dataReadyEvent.emit(this.player);
@@ -105,10 +108,16 @@ export class GameService {
 	}
 
 	goToStation(station: Station, section: Section){
+		let duration = section.distance * 1000000 / this.player.trains[this.trainIndex].power;
+		if(this.player.cheatSpeed){
+			duration /= 100;
+		}
+
 		this.station = station;
 		this.player.trains[this.trainIndex].idStation = station.id;
 		this.player.trains[this.trainIndex].startTime = (new Date()).valueOf();
-		this.player.trains[this.trainIndex].arrivalTime = (new Date()).valueOf() + section.distance * 100;
+		this.player.trains[this.trainIndex].arrivalTime = (new Date()).valueOf() + duration;
+		this.player.trains[this.trainIndex].isMovingDuringSession = true;
 		this.updateStatus(0);
 		this.trainService.update(this.player.trains[this.trainIndex]);
 	}
@@ -120,8 +129,19 @@ export class GameService {
             if(this.player.trains[this.trainIndex].arrivalTime <= (new Date()).valueOf()){	
             	this.player.trains[this.trainIndex].isMoving = false;
             	//console.log("stop moving");
+            	//TODO Toast?
+            	if(this.player.trains[this.trainIndex].isMovingDuringSession){
+	            	let toast = this.toastCtrl.create({
+				     	message: 'Your train arrived in '+this.station.name,
+				     	duration: 3000,
+	   	 				position: 'top'
+				    });
+				    toast.present();
+				}
             }else{
             	this.player.trains[this.trainIndex].isMoving = true;
+            	this.player.trains[this.trainIndex].timeOfArrival = this.player.trains[this.trainIndex].arrivalTime - (new Date()).valueOf();
+				//console.log(this.player.trains[this.trainIndex].timeOfArrival);
             	//console.log("continue moving");
             	this.updateStatus(1000);
             }
@@ -154,6 +174,12 @@ export class GameService {
 
 		return this.isDataReady().then((promise) => {
 			this.menuReady = true;
+			return 1;
+		});
+	}
+
+	updatePlayer(): Promise<number>{
+		return this.playerService.update(this.player).then((player) => {
 			return 1;
 		});
 	}

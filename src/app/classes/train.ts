@@ -12,7 +12,9 @@ export class Train {
 	idStation: number;
 	startTime: number;
 	arrivalTime: number;
+	timeOfArrival: number;
 	isMoving: boolean = false;
+	isMovingDuringSession: boolean = false;
 
 	// Properties from wagons
 	power: number = 0;

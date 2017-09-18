@@ -1,5 +1,5 @@
 import { Injectable }    from '@angular/core';
-import { Http } from '@angular/http';
+import { Headers, Http } from '@angular/http';
 import { ConfigService } from './config.service';
 
 import 'rxjs/add/operator/toPromise';
@@ -11,6 +11,7 @@ import { Player } from './player';
 export class PlayerService {
 
 	private apiUrl: string;
+	private headers = new Headers({'Content-Type': 'application/json'});
 
 	constructor(private http: Http, private configService: ConfigService) { 
 		this.apiUrl = configService.apiUrl+"players";
@@ -39,6 +40,15 @@ export class PlayerService {
 	             .toPromise()
 	             .then(response => response.json().players as Player[])
 	             .catch(this.handleError);
+	}
+
+	update(player: Player): Promise<Player> {
+	    const url = `${this.apiUrl}/${player.id}`;
+	    return this.http
+	      .put(url, JSON.stringify(player), {headers: this.headers})
+	      .toPromise()
+	      .then(() => player)
+	      .catch(this.handleError);
 	}
     
 

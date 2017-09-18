@@ -25,9 +25,20 @@
 
 				    <ion-item *ngIf="train.isMoving" (click)="goToStationPage()">
 				      <ion-icon name='arrow-round-forward' item-start></ion-icon>
-				      	Currently moving to Station
+				      	Currently moving to
 				      <ion-note item-end color="danger">
 				      	{{gameService.station.name}}
+				      </ion-note>
+				    </ion-item>
+
+				    <ion-item *ngIf="train.isMoving">
+				      <ion-icon name='timer' item-start></ion-icon>
+				      	Arrival in
+				      <ion-note item-end color="danger">
+				      	<!--{{train.timeOfArrival | amDuration:'milliseconds'}}
+				      	{{train.timeOfArrival / 1000 % (60 * 60 * 24) / (60 * 60) | number: 0}}:
+						{{train.timeOfArrival / 1000 % (60 * 60) / 60 | number: 0}}:-->
+						{{train.timeOfArrival / 1000 % (60 * 60) / 60 | number: '1.0-0'}}:{{train.timeOfArrival / 1000 % 60 | number: '1.0-0'}}
 				      </ion-note>
 				    </ion-item>
 

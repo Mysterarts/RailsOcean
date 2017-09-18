@@ -10,6 +10,7 @@ export class Player {
   	idTrains: number;
   	idTrainsArray: number[];
   	trains: Train[];
+  	cheatSpeed: boolean;
 
 	constructor(private services: GameServices) {
 		

@@ -7,6 +7,7 @@ import { Storage } from '@ionic/storage';
 import { GameService } from './classes/game.service';
 
 import { ConnexionPage } from '../pages/connexion/connexion';
+import { ParametersPage } from '../pages/parameters/parameters';
 import { TabsPage } from '../pages/tabs/tabs';
 
 @Component({
@@ -42,8 +43,9 @@ export class MyApp {
     });
 
     this.pages = [
+      { title: 'Play', component: TabsPage },
       { title: 'Change user', component: ConnexionPage },
-      { title: 'Play', component: TabsPage }
+      { title: 'Parameters', component: ParametersPage }
     ];
   }
 

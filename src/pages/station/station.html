@@ -25,7 +25,7 @@
     <ng-container *ngIf="gameService.player.trains[this.gameService.trainIndex].isMoving"> 
       <ion-card-content *ngIf="destStatus == 'same'">
         <ion-icon name='pin' item-start></ion-icon>
-        your train is heading towards this station
+        your train is heading towards this station ({{gameService.player.trains[gameService.trainIndex].timeOfArrival / 1000 % (60 * 60) / 60 | number: '1.0-0'}}:{{gameService.player.trains[gameService.trainIndex].timeOfArrival / 1000 % 60 | number: '1.0-0'}})
       </ion-card-content>
       <ion-card-content *ngIf="destStatus == 'distant'">
         This station is not directly connected to the destination station
