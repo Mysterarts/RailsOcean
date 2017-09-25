@@ -12,6 +12,7 @@ import { TabsPage } from '../tabs/tabs';
 export class ConnexionPage {
 	login: string;
 	password: string;
+	connexionRequired;
 
 	constructor(public navCtrl: NavController, private gameService: GameService, public navParams: NavParams, public toastCtrl: ToastController) {
 

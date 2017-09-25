@@ -7,6 +7,7 @@ export class StationResource {
 	idResource: number;
 	type: string;
 	quantity: number;
+	price: number;
 
 	constructor(private services: GameServices) {
 		
