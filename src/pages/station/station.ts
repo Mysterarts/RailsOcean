@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { ModalController, NavController, NavParams } from 'ionic-angular';
 
 import { GameService }  from '../../app/classes/game.service';
 import { Station } from '../../app/classes/station';
 import { Section } from '../../app/classes/section';
+
+import { WagonsModalPage } from '../modal/wagonsModal';
 
 
 @Component({
@@ -18,7 +20,11 @@ export class StationPage {
 	isMoving: boolean;
 	destSection: Section;
 
-  	constructor(public navCtrl: NavController, private gameService: GameService, public navParams: NavParams) {
+  	constructor(
+  		public navCtrl: NavController, 
+  		private gameService: GameService, 
+  		public navParams: NavParams,
+  		public modalCtrl: ModalController) {
 
 	  	this.gameService.isDataReady().then((promise) => {
 			this.idCurrentStation = this.gameService.station.id;
@@ -63,5 +69,10 @@ export class StationPage {
 	  		this.navCtrl.push(StationPage);
   		}
   	}
+
+  	openWagonsModal(params) {
+	    let modal = this.modalCtrl.create(WagonsModalPage, params);
+	    modal.present();
+	}
 
 }

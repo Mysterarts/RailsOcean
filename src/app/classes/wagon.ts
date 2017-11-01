@@ -6,13 +6,14 @@ export class Wagon {
 	id: number;
 	name: string;
 	type: string;
+	quantityToSell: number = 0;
 
 	//Train properties
 	power: number = 0;
 	wagonsMax: number = 0;
 	capacity: number = 0;
 
-	constructor(private services: GameServices, private content) {
+	constructor(private services: GameServices, public content) {
 		
 	}
 

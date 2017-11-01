@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Resources - {{idResource | resource | capitalize}}
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="train">
+    <ng-container *ngFor="let wagon of train.wagons">
+      <ion-item *ngIf="wagon.content.idResource == idResource">
+        <h2>{{wagon.name}} ({{wagon.content.quantity}} / {{wagon.capacity}})</h2>
+         <ion-badge item-end>{{wagon.quantityToSell}}</ion-badge>
+      </ion-item>
+      <ion-item *ngIf="wagon.content.idResource == idResource">
+        <ion-avatar item-start>
+          <img src="{{'assets/img/wagon_'+wagon.id+'.png'}}">
+        </ion-avatar>
+        <ion-range min="0" max="{{wagon.content.quantity}}" step="10" snaps="true" (ionChange)="updateSum()" [(ngModel)]="wagon.quantityToSell">
+          <ion-label range-left>0</ion-label>
+          <ion-label range-right>{{wagon.content.quantity}}</ion-label>
+        </ion-range>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+
+  <button ion-button full color="secondary" (click)="sellResource()">
+    Sell {{sum}} {{idResource | resource | capitalize}} for {{moneySum}}
+  </button>
+</ion-content>

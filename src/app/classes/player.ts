@@ -7,6 +7,7 @@ export class Player {
 	id: number;
   	name: string;
   	password: string;
+  	money: number;
   	idTrains: number;
   	idTrainsArray: number[];
   	trains: Train[];

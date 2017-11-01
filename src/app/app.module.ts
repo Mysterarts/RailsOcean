@@ -30,6 +30,7 @@ import { MapPage }                from '../pages/map/map';
 import { ConnexionPage }          from '../pages/connexion/connexion';
 import { ParametersPage }         from '../pages/parameters/parameters';
 import { TabsPage }               from '../pages/tabs/tabs';
+import { WagonsModalPage }        from '../pages/modal/wagonsModal';
 
 import { StatusBar }              from '@ionic-native/status-bar';
 import { SplashScreen }           from '@ionic-native/splash-screen';
@@ -46,7 +47,8 @@ import { SplashScreen }           from '@ionic-native/splash-screen';
     MapPage,
     ConnexionPage,
     ParametersPage,
-    TabsPage
+    TabsPage,
+    WagonsModalPage
   ],
   imports: [
     BrowserModule,
@@ -64,7 +66,8 @@ import { SplashScreen }           from '@ionic-native/splash-screen';
     MapPage,
     ConnexionPage,
     ParametersPage,
-    TabsPage
+    TabsPage,
+    WagonsModalPage
   ],
   providers: [
     StatusBar,
