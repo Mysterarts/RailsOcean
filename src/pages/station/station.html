@@ -45,18 +45,18 @@
           <img src="{{'assets/img/resource_'+res.idResource+'.png'}}">
         </ion-avatar>
         <h2>{{res.idResource | resource | capitalize}}</h2>
-        <h3>Price: {{res.price}}</h3>
+        <h3>Price: {{res.price}} &#9737; ({{res.quantityOwned}} owned)</h3>
       </ion-item>
 
       <ion-list-header no-margin>
         Sought resources
       </ion-list-header>
-      <ion-item *ngFor="let res of station.resourcesBuy" (click)="openWagonsModal({idResource: res.idResource,type:'sell'})">
+      <ion-item *ngFor="let res of station.resourcesBuy" (click)="openWagonsModal({res: res,type:'sell'})">
         <ion-avatar item-start>
           <img src="{{'assets/img/resource_'+res.idResource+'.png'}}">
         </ion-avatar>
         <h2>{{res.idResource | resource | capitalize}}</h2>
-        <h3>Price: {{res.price}}</h3>
+        <h3>Price: {{res.price}} &#9737; ({{res.quantityOwned}} owned)</h3>
       </ion-item>
 
       <ion-list-header no-margin>

@@ -34,12 +34,16 @@ export class StationPage {
 			if(navParams.get("idStation") == undefined){	
 				this.station = this.gameService.station;
 				this.destStatus = "same";
+
+				this.refreshResource();
 			}else{
 				let idStation = navParams.get("idStation");
 
 				gameService.getStationById(idStation).then((station) => {
 					this.station = station;
 					this.destStatus = "distant";
+
+					this.refreshResource();
 
 					if(this.station.id == this.idCurrentStation){
 						this.destStatus = "same";
@@ -57,6 +61,30 @@ export class StationPage {
 
   	}
 
+  	refreshResource(){
+  		this.station.resourcesSell.forEach((res) => {
+  			
+  			res.quantityOwned = 0;
+
+  			this.gameService.player.trains[this.gameService.trainIndex].wagons.forEach((wagon) => {
+	  			if(wagon.content.idResource == res.idResource){
+	  				res.quantityOwned += wagon.content.quantity;
+	  			}
+	  		});
+  		});
+
+  		this.station.resourcesBuy.forEach((res) => {
+  			
+  			res.quantityOwned = 0;
+
+  			this.gameService.player.trains[this.gameService.trainIndex].wagons.forEach((wagon) => {
+	  			if(wagon.content.idResource == res.idResource){
+	  				res.quantityOwned += wagon.content.quantity;
+	  			}
+	  		});
+  		});
+  	}
+
   	goToStationPage(idStation: number){
   		this.navCtrl.push(StationPage, {
 	    	idStation: idStation
@@ -71,8 +99,13 @@ export class StationPage {
   	}
 
   	openWagonsModal(params) {
-	    let modal = this.modalCtrl.create(WagonsModalPage, params);
-	    modal.present();
+  		if(params.res.quantityOwned > 0 || params.type == "buy"){
+	    	let modal = this.modalCtrl.create(WagonsModalPage, params);
+			modal.onDidDismiss(() => {
+		    	this.refreshResource();
+		    });
+	    	modal.present();
+	    }
 	}
 
 }

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Resources - {{idResource | resource | capitalize}}
+      Resources - {{idResource | resource | capitalize}} ({{priceResource}} &#9737;)
     </ion-title>
     <ion-buttons start>
       <button ion-button (click)="dismiss()">
@@ -30,7 +30,11 @@
     </ng-container>
   </ion-list>
 
-  <button ion-button full color="secondary" (click)="sellResource()">
-    Sell {{sum}} {{idResource | resource | capitalize}} for {{moneySum}}
+  <button ion-button full color="secondary" (click)="sellResource(false)">
+    Sell {{sum}} {{idResource | resource | capitalize}} for {{moneySum}} &#9737;
+  </button>
+
+  <button ion-button full color="danger" (click)="sellResource(true)">
+    Sell ALL {{idResource | resource | capitalize}} ({{sumAll}}) for {{moneySumAll}} &#9737;
   </button>
 </ion-content>

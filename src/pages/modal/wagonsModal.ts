@@ -15,7 +15,9 @@ export class WagonsModalPage {
 	priceResource: number;
 	type: string;
 	sum: number = 0;
+	sumAll: number = 0;
 	moneySum: number = 0;
+	moneySumAll: number = 0;
 
 	constructor(
 		public navCtrl: NavController, 
@@ -25,20 +27,34 @@ export class WagonsModalPage {
 
 		this.gameService.isDataReady().then((promise) => {
 			this.train = this.gameService.player.trains[this.gameService.trainIndex];
+			this.updateSum();
 		});
 
-		this.idResource = this.params.get('idResource');
+		this.idResource = this.params.get('res').idResource;
 		this.type = this.params.get('type');
 	}
 
 	dismiss() {
-    	this.viewCtrl.dismiss();
+    	this.train.wagons.forEach((wagon) => {
+  			wagon.quantityToSell = 0;
+  		});
+
+  		this.viewCtrl.dismiss();
   	}
 
   	updateSum(){
-  		this.sum = this.arraySum(this.train.wagons, "quantityToSell"); 
+  		this.sum = this.sumAll = 0;
+
+  		this.train.wagons.forEach((wagon) => {
+  			if(wagon.content.idResource == this.idResource){
+  				this.sum += wagon.quantityToSell;
+  				this.sumAll += wagon.content.quantity;
+  			}
+  		});
+
   		this.refreshPrice();
   		this.moneySum = this.sum * this.priceResource;
+  		this.moneySumAll = this.sumAll * this.priceResource;
   	}
 
   	refreshPrice(){
@@ -49,17 +65,40 @@ export class WagonsModalPage {
   		});
   	}
 
-  	sellResource(){
+  	sellResource(all:boolean){
   		this.refreshPrice();
   		this.train.wagons.forEach((wagon) => {
   			if(wagon.content.idResource == this.idResource){
-  				
+
+  				if(all){
+  					wagon.content.quantity = 0;
+  				}else{
+  					wagon.content.quantity -= wagon.quantityToSell;
+  				}
+
+  				if(wagon.content.quantity <= 0){
+  					wagon.content.idResource = 0;
+  				}
+  				this.gameService.services.wagonService.update(wagon);
   			}
+
+  			wagon.quantityToSell = 0;
   		});
+
+  		if(all){
+			this.gameService.player.money += this.moneySumAll;
+		}else{
+			this.gameService.player.money += this.moneySum;
+		}
+
+  		this.gameService.updatePlayer();
+
+  		this.viewCtrl.dismiss();
   	}
 
   	arraySum(items, prop){
 	    return items.reduce( function(a, b){
+	    	console.log(b[prop]);
 	        return a + b[prop];
 	    }, 0);
 	};

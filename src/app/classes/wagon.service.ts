@@ -11,6 +11,7 @@ export class WagonService {
 
 	private apiUrlData: string;
 	private apiUrl: string;
+	private headers = new Headers({'Content-Type': 'application/json'});
 
 	constructor(private http: Http, private configService: ConfigService) { 
 		this.apiUrl = configService.apiUrl+"wagons";
@@ -48,6 +49,15 @@ export class WagonService {
 	    		   	return response.json() as Wagon
 	    		   })
 	    		   .catch(this.handleError);
+	}
+
+	update(wagon: Wagon): Promise<Number> {
+	    const url = `${this.apiUrl}/${wagon.content.id}`;
+	    return this.http
+	      .put(url, JSON.stringify(wagon.content), {headers: this.headers})
+	      .toPromise()
+	      .then(() => 1)
+	      .catch(this.handleError);
 	}
 
 	private handleError(error: any): Promise<any> {
