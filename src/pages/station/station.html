@@ -40,7 +40,7 @@
       <ion-list-header no-margin>
         Available resources
       </ion-list-header>
-      <ion-item *ngFor="let res of station.resourcesSell">
+      <ion-item *ngFor="let res of station.resourcesSell" (click)="openWagonsModal({res: res,type:'buy'})">
         <ion-avatar item-start>
           <img src="{{'assets/img/resource_'+res.idResource+'.png'}}">
         </ion-avatar>

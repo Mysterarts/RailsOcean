@@ -12,13 +12,41 @@
 </ion-header>
 
 <ion-content>
-  <ion-list *ngIf="train">
+  <ion-list *ngIf="train && type == 'buy'">
     <ng-container *ngFor="let wagon of train.wagons">
-      <ion-item *ngIf="wagon.content.idResource == idResource">
+      <ion-item *ngIf="wagon.content.idResource == idResource || wagon.content.quantity == 0">
+        <h2>{{wagon.name}} ({{wagon.content.quantity}} / {{wagon.capacity}}) <span *ngIf="wagon.content.quantity == wagon.capacity">FULL!</span></h2>
+         <ion-badge item-end *ngIf="wagon.content.quantity < wagon.capacity">{{wagon.quantityToBuy}}</ion-badge>
+      </ion-item>
+      <ion-item *ngIf="(wagon.content.idResource == idResource && wagon.content.quantity < wagon.capacity) || wagon.content.quantity == 0">
+        <ion-avatar item-start>
+          <img src="{{'assets/img/wagon_'+wagon.id+'.png'}}">
+        </ion-avatar>
+        <ion-range min="0" max="{{wagon.capacity - wagon.content.quantity}}" step="10" snaps="true" (ionChange)="updateSum()" [(ngModel)]="wagon.quantityToBuy">
+          <ion-label range-left>{{wagon.content.quantity}}</ion-label>
+          <ion-label range-right>{{wagon.capacity}}</ion-label>
+        </ion-range>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+
+  <button ion-button full color="secondary" (click)="buyResource(false)" *ngIf="type == 'buy'">
+    Buy {{sum}} {{idResource | resource | capitalize}} for {{moneySum}} &#9737;
+  </button>
+
+<!--
+  <button ion-button full color="danger" (click)="sellResource(true)" *ngIf="type == 'buy'">
+    Buy ALL {{idResource | resource | capitalize}} ({{sumAll}}) for {{moneySumAll}} &#9737;
+  </button>
+-->
+
+  <ion-list *ngIf="train && type == 'sell'">
+    <ng-container *ngFor="let wagon of train.wagons">
+      <ion-item *ngIf="wagon.content.idResource == idResource && wagon.content.quantity > 0">
         <h2>{{wagon.name}} ({{wagon.content.quantity}} / {{wagon.capacity}})</h2>
          <ion-badge item-end>{{wagon.quantityToSell}}</ion-badge>
       </ion-item>
-      <ion-item *ngIf="wagon.content.idResource == idResource">
+      <ion-item *ngIf="wagon.content.idResource == idResource && wagon.content.quantity > 0">
         <ion-avatar item-start>
           <img src="{{'assets/img/wagon_'+wagon.id+'.png'}}">
         </ion-avatar>
@@ -30,11 +58,12 @@
     </ng-container>
   </ion-list>
 
-  <button ion-button full color="secondary" (click)="sellResource(false)">
+  <button ion-button full color="secondary" (click)="sellResource(false)" *ngIf="type == 'sell'">
     Sell {{sum}} {{idResource | resource | capitalize}} for {{moneySum}} &#9737;
   </button>
 
-  <button ion-button full color="danger" (click)="sellResource(true)">
+  <button ion-button full color="danger" (click)="sellResource(true)" *ngIf="type == 'sell'">
     Sell ALL {{idResource | resource | capitalize}} ({{sumAll}}) for {{moneySumAll}} &#9737;
   </button>
+
 </ion-content>

@@ -105,6 +105,8 @@ export class StationPage {
 		    	this.refreshResource();
 		    });
 	    	modal.present();
+	    }else{
+	    	this.gameService.toast("You don't own this resource");
 	    }
 	}
 

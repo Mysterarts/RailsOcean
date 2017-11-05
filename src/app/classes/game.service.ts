@@ -113,6 +113,7 @@ export class GameService {
 			duration /= 100;
 		}
 
+		//TODO fix the counter display
 		this.station = station;
 		this.player.trains[this.trainIndex].idStation = station.id;
 		this.player.trains[this.trainIndex].startTime = (new Date()).valueOf();
@@ -131,12 +132,7 @@ export class GameService {
             	//console.log("stop moving");
             	//TODO Toast?
             	if(this.player.trains[this.trainIndex].isMovingDuringSession){
-	            	let toast = this.toastCtrl.create({
-				     	message: 'Your train arrived in '+this.station.name,
-				     	duration: 3000,
-	   	 				position: 'top'
-				    });
-				    toast.present();
+				    this.toast('Your train arrived in '+this.station.name);
 				}
             }else{
             	this.player.trains[this.trainIndex].isMoving = true;
@@ -182,6 +178,15 @@ export class GameService {
 		return this.playerService.update(this.player).then((player) => {
 			return 1;
 		});
+	}
+
+	toast(txt:string){
+		let toast = this.toastCtrl.create({
+	     	message: txt,
+	     	duration: 3000,
+ 				position: 'top'
+	    });
+	    toast.present();
 	}
 }
 

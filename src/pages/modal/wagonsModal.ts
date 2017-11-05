@@ -37,6 +37,7 @@ export class WagonsModalPage {
 	dismiss() {
     	this.train.wagons.forEach((wagon) => {
   			wagon.quantityToSell = 0;
+  			wagon.quantityToBuy = 0;
   		});
 
   		this.viewCtrl.dismiss();
@@ -46,10 +47,14 @@ export class WagonsModalPage {
   		this.sum = this.sumAll = 0;
 
   		this.train.wagons.forEach((wagon) => {
-  			if(wagon.content.idResource == this.idResource){
-  				this.sum += wagon.quantityToSell;
-  				this.sumAll += wagon.content.quantity;
-  			}
+  			if(this.type == "buy"){	
+	  				this.sum += wagon.quantityToBuy;
+	  		}else{
+	  			if(wagon.content.idResource == this.idResource){
+	  				this.sum += wagon.quantityToSell;
+	  				this.sumAll += wagon.content.quantity;
+	  			}
+	  		}
   		});
 
   		this.refreshPrice();
@@ -58,11 +63,20 @@ export class WagonsModalPage {
   	}
 
   	refreshPrice(){
-  		this.gameService.station.resourcesBuy.forEach((res) => {
+	  	if(this.type == "buy")
+	  	{	
+	  		this.gameService.station.resourcesSell.forEach((res) => {
+	  			if(res.idResource == this.idResource){
+	  				this.priceResource = res.price;
+	  			}
+	  		});
+	  	}else{
+	  		this.gameService.station.resourcesBuy.forEach((res) => {
   			if(res.idResource == this.idResource){
   				this.priceResource = res.price;
   			}
   		});
+	  	}
   	}
 
   	sellResource(all:boolean){
@@ -96,9 +110,44 @@ export class WagonsModalPage {
   		this.viewCtrl.dismiss();
   	}
 
+  	buyResource(all:boolean){
+  		this.refreshPrice();
+  		//let totalBought: number = 0; TODO manage quantity in station
+
+  		if(this.gameService.player.money >= this.moneySum){
+	  		this.train.wagons.forEach((wagon) => {
+
+	  			if(wagon.quantityToBuy > 0){
+
+					if(all){
+						//wagon.content.quantity = 0;
+					}else{
+						wagon.content.quantity += wagon.quantityToBuy;
+						wagon.content.idResource = this.idResource;
+					}
+
+					this.gameService.services.wagonService.update(wagon);
+				}
+
+	  			wagon.quantityToBuy = 0;
+	  		});
+
+	  		if(all){
+				//this.gameService.player.money += this.moneySumAll;
+			}else{
+				this.gameService.player.money -= this.moneySum;
+			}
+
+	  		this.gameService.updatePlayer();
+
+	  		this.viewCtrl.dismiss();
+	  	}else{
+		    this.gameService.toast("You don't have enough money ("+this.gameService.player.money+")!");
+	  	}
+  	}
+
   	arraySum(items, prop){
 	    return items.reduce( function(a, b){
-	    	console.log(b[prop]);
 	        return a + b[prop];
 	    }, 0);
 	};

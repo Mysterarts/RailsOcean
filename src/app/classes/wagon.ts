@@ -6,6 +6,7 @@ export class Wagon {
 	id: number;
 	name: string;
 	type: string;
+	quantityToBuy: number = 0;
 	quantityToSell: number = 0;
 
 	//Train properties
