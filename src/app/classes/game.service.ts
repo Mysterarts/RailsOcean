@@ -137,7 +137,7 @@ export class GameService {
             }else{
             	this.player.trains[this.trainIndex].isMoving = true;
             	this.player.trains[this.trainIndex].timeOfArrival = this.player.trains[this.trainIndex].arrivalTime - (new Date()).valueOf();
-				//console.log(this.player.trains[this.trainIndex].timeOfArrival);
+				console.log(this.player.trains[this.trainIndex].timeOfArrival);
             	//console.log("continue moving");
             	this.updateStatus(1000);
             }

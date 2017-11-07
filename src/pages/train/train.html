@@ -35,10 +35,7 @@
 				      <ion-icon name='timer' item-start></ion-icon>
 				      	Arrival in
 				      <ion-note item-end color="danger">
-				      	<!--{{train.timeOfArrival | amDuration:'milliseconds'}}
-				      	{{train.timeOfArrival / 1000 % (60 * 60 * 24) / (60 * 60) | number: 0}}:
-						{{train.timeOfArrival / 1000 % (60 * 60) / 60 | number: 0}}:-->
-						{{train.timeOfArrival / 1000 % (60 * 60) / 60 | number: '1.0-0'}}:{{train.timeOfArrival / 1000 % 60 | number: '1.0-0'}}
+						{{train.timeOfArrival / 1000 % (60 * 60) / 60 | floor}}:{{train.timeOfArrival / 1000 % 60 | floor}}
 				      </ion-note>
 				    </ion-item>
 

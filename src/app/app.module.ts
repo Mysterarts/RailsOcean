@@ -12,6 +12,7 @@ import { InMemoryDataService }    from './in-memory-data.service';
 */
 import { ResourcePipe }           from './utils/resource.pipe';
 import { CapitalizePipe }         from './utils/capitalize.pipe';
+import { FloorPipe }              from 'angular-pipes/src/math/floor.pipe';
 
 import { GameService }            from './classes/game.service';
 import { ConfigService }          from './classes/config.service';
@@ -41,6 +42,7 @@ import { SplashScreen }           from '@ionic-native/splash-screen';
     MyApp,
     ResourcePipe,
     CapitalizePipe,
+    FloorPipe,
     TrainPage,
     WagonsPage,
     StationPage,
